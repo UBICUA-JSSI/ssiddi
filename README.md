@@ -32,10 +32,10 @@ By combining an UDDI-like registry architecture with an OWL-compliant data model
 <img src="ssiddi_architecture.png" width="62%" height="" />
 
 ### Credential Lifecycle
-Generally, the lifecycle of verifiable credentials can be divided into the following stages:
-1. Definitions
-2. Registrations
-3. Operations
+Generally, the lifecycle of any identity-related service (in particular, verifiable credentials) can be divided into the following stages:
+1. **Definitions**: At this stage, a provider develops and publishes service definitions. For example, a provider of Verifiable Credentials (Issuer) works out all necessary information (schemes, credential definitions, policies, etc.) to be discovered and used later by VC consumers (Holder and Verifier).
+2. **Registrations** (_aka_ onboarding or enrolment): At this stage, the provider registers consumers (aka subscribers) of the published services. For example, the Issuer registers Holders, as consumers of VC services.
+3. **Operations**: At this stage, the provider and the consumers interoperate using the service definitions and registrations made at the previous stages. Thus, the provider-consumer pairs, namely Issuer-Holder and Holder-Verifier, interact during the VC issuance and verification processes, respectively.
 
 ## Data Model
 The data model must contain the following elements:
