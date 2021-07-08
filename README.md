@@ -19,8 +19,8 @@ SSI Description, Disovery and Interoperability (SSIDDI) is an open initiative ad
 
 Our analysis is limited by the provider-consumer type of identity relationships. In a typical scenario, a user acquires its credentials (identity card, driving licence, university diploma, medical insurance, etc.) from a trusted service and then uses them in relations with other identity or business services. Within the SSI model, such a scenario implies that an identity owner, as a DID Subject and/or VC Holder, establishes legal relations with:
 
-- **SSI Service Provider** is a public entity accredited to provide SSI Services as DID Controller and/or VC Issuer. Note that the prerequisite of previous accreditation is important from the viewpoint of legal and organizational aspects of the ecosystem governance.
-- **SSI Service Consumer** is a public entity that is subscribed to SSI Services and utilizes them in the Access Management (AM) and/or Business Processes (BP). Note that, the same entity may play both roles depending on a particular context. 
+- **SSI Service Publisher/Provider** is a public entity accredited to publish SSI Services and provide them as DID Controller and/or VC Issuer. Note that the prerequisite of previous accreditation is important from the viewpoint of legal and organizational aspects of the ecosystem governance.
+- **SSI Service Subscriber/Consumer** is a public entity that is subscribed to SSI Services and utilizes them in the Access Management (AM) and/or Business Processes (BP). Note that, the same entity may play both roles depending on a particular context. 
 
 In a very general manner, we introduce a SSI Service lifecycle that includes the following basic stages:
 
@@ -54,7 +54,7 @@ The SSIDDI solution defines three components of the SSI Service Registry: Data M
 The Data Model of SSI Service Registry represents a three-layer structure:
 - **White Pages** that contain descriptions of accredited public entities, including name, discovery URLs, contact info, etc. Note that each accredited public entity can play two roles, i.e. Publisher and Subscriber, being a Subscriber in one context and a Publisher in another one.
 - **Yellow Pages** that contain descriptions of SSI Services, including taxonomies, policies, etc. In other words, this element can be called a SSI Service Catalogue following the ideas discussed in the [SSI Governance whitepaper](https://www.researchgate.net/publication/348325716_Decentralized_SSI_Governance_the_missing_link_in_automating_business_decisions).
-- **Green Pages** that contain technical details of SSI Services, including schemas, credential definitions, etc. At the further maturity state of the SSI model, a description language, i.g. Identity Service Description Language (ISDL), can be created for these reasons. Actually, SSIDDI relies on the raw descriptions done in the DID and VC specifications.
+- **Green Pages** that contain technical details of SSI Services, including schemas, credential definitions, etc. At the further maturity state of the SSI model, a description language, e.g. Identity Service Description Language (ISDL), can be created for these reasons. Actually, SSIDDI relies on the raw descriptions done in the DID and VC specifications.
 
 The corresponding data structures are specified below.
 
