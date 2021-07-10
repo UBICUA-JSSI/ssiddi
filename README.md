@@ -82,7 +82,7 @@ The Service structure is the logical child of a single Entity and contains descr
 ### Interface Structure
 The Interface structure is the logical child of a single service and contains technical descriptions of an identity service. It also describes the application-specific parameters and other settings. Each Interface structure consists of:
 - **description** is a set of interface descriptions in different languages.
-- **accessPoint** is a string used to convey the network address suitable for invoking the Web service being described.
+- **accessPoint** is a string used to convey the network address suitable for invoking the service being described.
 -	**tbd**
 - **categoryBag** is a list of categorizations that each describes a specific aspect of a particular Interface. 
 - **signature**: tbd
