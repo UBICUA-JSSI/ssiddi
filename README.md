@@ -65,9 +65,9 @@ Entity is the top-level data structure that contains descriptive information abo
 - **description** is a set of entity descriptions in different languages.
 - **contacts** is a collection of contact structures, each of which containing description, emails, phones, addresses of entity representatives.
 - **identifierBag** is a list of reference structures, each of which representing a single identification.
-- **categoryBag** is a list of reference structures, each of which containing a single categorization. 
+- **categoryBag** is a list of reference structures, each of which containing a single categorization.
+- **publishedServices** is a list of identity services provided by the Entity.
 - **subscribedServices** is a list of identity services to which the Entity is subscribed.
-- **providedServices** is a list of identity services provided by the Entity.
 - **signature**: tbd
 
 ### Service Structure
