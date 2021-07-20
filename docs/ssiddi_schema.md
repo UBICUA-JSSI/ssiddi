@@ -1,5 +1,5 @@
 # SSIDDI Schema
-Primary schema of the SSI Description, Discovery and Interoperability
+Primary schema of SSI Description, Discovery and Interoperability
 
 ## References
 |Prefix  |Vocabulary Name                            |Vocabulary Title                    |
@@ -9,4 +9,7 @@ Primary schema of the SSI Description, Discovery and Interoperability
 |rdfs    |http://www.w3.org/2000/01/rdf-schema#      |RDF Schema 1.1                      |
 |owl     |http://www.w3.org/2002/07/owl#             |Ontology Web Language               |
 |skos    |http://www.w3.org/2004/02/skos/core#       |Simple Knowledge Organization System|
+|did     |https://www.w3.org/ns/did/v1#              |Decentralized IDentifier Definition |
+|vc      |https://www.w3.org/2018/credentials/v1#    |Verifiable Credential Definition    |
+|sec     |https://w3id.org/security#                 |Security Vocabularity               |
 
