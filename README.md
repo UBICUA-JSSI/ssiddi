@@ -56,7 +56,28 @@ SSIDDI has the following logical structure:
 - **Yellow Pages** that contain descriptions of SSI Services, including taxonomies, policies, etc. In other words, this element can be called a SSI Service Catalogue following the ideas discussed in the [SSI Governance whitepaper](https://www.researchgate.net/publication/348325716_Decentralized_SSI_Governance_the_missing_link_in_automating_business_decisions).
 - **Green Pages** that contain technical details of SSI Services, including schemas, credential definitions, etc. At the further maturity state of the SSI model, a description language, e.g. Identity Service Description Language (ISDL), can be created for these reasons. Actually, SSIDDI relies on the raw descriptions done in the DID and VC specifications.
 
-The corresponding data model of SSI Service Registry is divided into the three main structures: Organization, Service and Interface.
+The data model of SSI Service Registry consists of the three main classes: Organization, Service and Interface, respectively. 
+
+The SSIDDI model is built on top of the Resourse Definition Framework (RDF) that defines a "triple" as a basic semantic construct containing three core components: Subject, Predicate and Object. In the table below, there is a schematical example of RDF relationships between the three SSIDDI classes applied to a VC issuance of some university degree.
+
+<table>
+    <thead><tr><th>Subject</th><th>Predicate</th><th>Object</th><th>Comment</th></tr></thead>
+    <tbody>
+      <tr><td><b>Organization</b></td><td>id</td><td>12345678-a12b-34c5-d678-123456780000</td><td></td></tr>    
+      <tr><td>Organization</td><td>url</td><td>http://example.edu</td><td></td></tr>         
+      <tr><td>Organization</td><td>name</td><td>Example University</td><td></td></tr>
+      <tr><td>Organization</td><td>type</td><td>University</td><td></td></tr>      
+      <tr><td>Organization</td><td>accreditedBy</td><td>Organization*</td><td></td></tr>   
+      <tr><td>Organization</td><td>provides</td><td><b>Service</b></td><td></td></tr>
+      <tr><td><b>Service</b></td><td>id</td><td>did:example:123456789abcdefghi</td><td></td></tr>
+      <tr><td>Service</td><td>type</td><td>University Degree</td><td></td></tr>      
+      <tr><td>Service</td><td>implements</td><td><b>Interface</b></td><td></td></tr>
+      <tr><td><b>Interface</b></td><td>id</td><td>http://example.edu/credentials/123</td><td></td></tr>
+      <tr><td>Interface</td><td>type</td><td>Bachelor Degree</td><td></td></tr>      
+      <tr><td>Interface</td><td>issuanceDate</td><td>Date*</td><td></td></tr>
+      <tr><td>Interface</td><td>issuedTo</td><td>Individual*</td><td></td></tr>      
+    </tbody>
+</table>
 
 ### Organization Structure
 Organization is the top-level data structure that contains descriptive information about a public organization or enterprise it describes and the services it offers. Each Organization structure consists of:
