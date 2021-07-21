@@ -51,27 +51,29 @@ Taking into account the above mentioned, the modified lifecycle diagram for veri
 The SSIDDI solution defines three components of the SSI Service Registry: Data Model, Specification APIs and Technical Architecture.
 
 ## Data Model
-The Data Model of SSI Service Registry represents a three-layer structure:
+SSIDDI has the following logical structure:
 - **White Pages** that contain descriptions of accredited public entities, including name, discovery URLs, contact info, etc. Note that each accredited public entity can play two roles, i.e. Publisher and Subscriber, being a Subscriber in one context and a Publisher in another one.
 - **Yellow Pages** that contain descriptions of SSI Services, including taxonomies, policies, etc. In other words, this element can be called a SSI Service Catalogue following the ideas discussed in the [SSI Governance whitepaper](https://www.researchgate.net/publication/348325716_Decentralized_SSI_Governance_the_missing_link_in_automating_business_decisions).
 - **Green Pages** that contain technical details of SSI Services, including schemas, credential definitions, etc. At the further maturity state of the SSI model, a description language, e.g. Identity Service Description Language (ISDL), can be created for these reasons. Actually, SSIDDI relies on the raw descriptions done in the DID and VC specifications.
 
-The corresponding data structures are specified below.
+The corresponding data model of SSI Service Registry is divided into the three main structures: Organization, Service and Interface.
 
-### Entity Structure
-Entity is the top-level data structure that contains descriptive information about a public organization or enterprise it describes and the services it offers. Each Entity structure consists of:
-- **discoveryURLs** is a list of URLs that point to service discovery documents.
-- **name** is a set of entity names specified in different languages.
-- **description** is a set of entity descriptions in different languages.
-- **contacts** is a collection of contact structures, each of which containing description, emails, phones, addresses of entity representatives.
+### Organization Structure
+Organization is the top-level data structure that contains descriptive information about a public organization or enterprise it describes and the services it offers. Each Organization structure consists of:
 - **identifierBag** is a list of reference structures, each of which representing a single identification.
 - **categoryBag** is a list of reference structures, each of which containing a single categorization.
-- **publishedServices** is a list of identity services provided by the Entity.
-- **subscribedServices** is a list of identity services to which the Entity is subscribed.
+- **discoveryURLs** is a list of URLs that point to service discovery documents.
+- **name** is a set of organization names specified in different languages.
+- **description** is a set of organization descriptions in different languages.
+- **contacts** is a collection of contact structures, each of which containing description, emails, phones, addresses of organization representatives.
+- **publishedServices** is a list of identity services that each organization can provide.
+- **subscribedServices** is a list of identity services to which each organization can be subscribed.
+- **accreditaion** tbd
 - **signature**: tbd
 
 ### Service Structure
-The Service structure is the logical child of a single Entity and contains descriptive information of a particular identity service. Each Service structure consists of:
+The Service structure is the logical child of a single organization and contains descriptive information of a particular identity service. Each Service structure consists of:
+- **id** is an identity service identifier of an (DID).
 - **name** is a set of service names specified in different languages.
 - **description** is a set of service descriptions in different languages.
 - **categoryBag** is a list of reference structures, each of which containing a single categorization.
@@ -81,6 +83,7 @@ The Service structure is the logical child of a single Entity and contains descr
 
 ### Interface Structure
 The Interface structure is the logical child of a single service and contains technical descriptions of an identity service. It also describes the application-specific parameters and other settings. Each Interface structure consists of:
+- **id** is an interface identifier (DID).
 - **description** is a set of interface descriptions in different languages.
 - **accessPoint** is a string used to convey the network address suitable for invoking the service being described.
 -	**tbd**
