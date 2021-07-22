@@ -1,0 +1,42 @@
+openapi: 3.0.1
+
+info:
+  title: SSIDDI API
+  description: SSI Registry
+  version: 1.0.0
+
+components:
+  schemas:
+    models.TrustedIssuerList:
+      type: object
+      required:
+      - trustedIssuers
+      properties:
+        'trustedIssuers':
+          type: array
+          items:
+            $ref: '#/components/schemas/models.TrustedIssuer'
+    models.TrustedIssuer:
+      required:
+      - '@context'
+      - dids
+      - organizationInfo
+      - accreditations
+      type: object
+      properties:
+        '@context':
+          type: string
+          example: https://example.edu
+        id:
+          type: string
+          example: e20993d1-2430-462b-a9d0-2f2ead3345f8
+        domain:
+          type: string
+          example: Education
+        dids:
+          type: array
+          example:
+          - did:gatc:2abcd...ABC#123456789
+          - did:ebsi:2abcd...ABC#123456789
+          items:
+            type: string
