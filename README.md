@@ -63,19 +63,19 @@ The SSIDDI model is built on top of the Resourse Definition Framework (RDF) that
 <table>
     <thead><tr><th>Subject</th><th>Predicate</th><th>Object</th><th>Comment</th></tr></thead>
     <tbody>
-      <tr><td><b>Organization</b></td><td>id</td><td>12345678-a12b-34c5-d678-123456780000</td><td></td></tr>    
-      <tr><td>Organization</td><td>url</td><td>http://example.edu</td><td></td></tr>         
-      <tr><td>Organization</td><td>name</td><td>Example University</td><td></td></tr>
-      <tr><td>Organization</td><td>type</td><td>University</td><td></td></tr>      
-      <tr><td>Organization</td><td>accreditedBy</td><td>Organization*</td><td></td></tr>   
-      <tr><td>Organization</td><td>provides</td><td><b>Service</b></td><td></td></tr>
-      <tr><td><b>Service</b></td><td>id</td><td>did:example:123456789abcdefghi</td><td></td></tr>
-      <tr><td>Service</td><td>type</td><td>University Degree</td><td></td></tr>      
-      <tr><td>Service</td><td>implements</td><td><b>Interface</b></td><td></td></tr>
-      <tr><td><b>Interface</b></td><td>id</td><td>http://example.edu/credentials/123</td><td></td></tr>
-      <tr><td>Interface</td><td>type</td><td>Bachelor Degree</td><td></td></tr>      
-      <tr><td>Interface</td><td>issuanceDate</td><td>Date*</td><td></td></tr>
-      <tr><td>Interface</td><td>issuedTo</td><td>Individual*</td><td></td></tr>      
+      <tr><td><b>Organization</b></td><td>identifiers</td><td>12345678-a12b-34c5-d678-123456780000</td><td>Organization Identifier Bag</td></tr>    
+      <tr><td>Organization</td><td>urls</td><td>http://example.edu</td><td>Discovery URLs</td></tr>         
+      <tr><td>Organization</td><td>name</td><td>Example University</td><td>Legal and Commercial names</td></tr>
+      <tr><td>Organization</td><td>type</td><td>Education, University</td><td>Organization Classification</td></tr>      
+      <tr><td>Organization</td><td>provides</td><td><b>Service</b></td><td>A list of SSI Service References</td></tr>
+      <tr><td><b>Service</b></td><td>identifiers</td><td>did:example:123456789abcdefghi</td><td>Service Identifier Bag</td></tr>
+      <tr><td>Service</td><td>type</td><td>University Degree</td><td>Service Taxonomy</td></tr>  
+      <tr><td>Service</td><td>policy</td><td>http://example.edu/policies/1</td><td>Legal Disclaimer and Privacy Policy</td></tr>         
+      <tr><td>Service</td><td>accreditation</td><td>Organization*</td><td>Accreditated by another Organization</td></tr>         
+      <tr><td>Service</td><td>implements</td><td><b>Interface</b></td><td>A list of SSI Service Interfaces</td></tr>
+      <tr><td><b>Interface</b></td><td>identifiers</td><td>12345678-a12b-34c5-d678-123456781001</td><td>Interface Identifier Bag</td></tr>
+      <tr><td>Interface</td><td>type</td><td>Example University's Bachelor Degree Credential</td><td>A particular interface type</td></tr>      
+      <tr><td>Interface</td><td>definition</td><td>http://example.edu/credentials/1</td><td>Credential Schema and Definition</td></tr>     
     </tbody>
 </table>
 
