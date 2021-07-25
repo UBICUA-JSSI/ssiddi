@@ -2,18 +2,18 @@
 Primary schema of SSI Description, Discovery and Interoperability
 
 ## References
-|Prefix  |Vocabulary Name                                |Vocabulary Title                    |
-|--------|-----------------------------------------------|------------------------------------|
-|xsd     |https://www.w3.org/2009/XMLSchema/XMLSchema#   |XML Schema 1.1 Definition           |
-|dc      |http://purl.org/dc/elements/1.1/               |Doublin Core                        |
-|rdf     |http://www.w3.org/1999/02/22-rdf-syntax-ns#    |Resource Description Framework      |
-|rdfs    |http://www.w3.org/2000/01/rdf-schema#          |RDF Schema 1.1                      |
-|owl     |http://www.w3.org/2002/07/owl#                 |Ontology Web Language               |
-|skos    |http://www.w3.org/2004/02/skos/core#           |Simple Knowledge Organization System|
-|uddi    |http://www.uddi.org/schema/uddi_v3#            |UDDI API Schema                     |
-|did     |https://www.w3.org/ns/did/v1                   |Decentralized IDentifier Definition |
-|vc      |https://www.w3.org/2018/credentials/v1         |Verifiable Credential Definition    |
-|sec     |https://w3id.org/security#                     |Security Vocabularity               |
+|Prefix  |Vocabulary Name                                |Vocabulary Title                           |
+|--------|-----------------------------------------------|-------------------------------------------|
+|xsd     |https://www.w3.org/2009/XMLSchema/XMLSchema#   |XML Schema 1.1 Definition                  |
+|dc      |http://purl.org/dc/elements/1.1/               |Dublin Core Metadata Initiative            |
+|rdf     |http://www.w3.org/1999/02/22-rdf-syntax-ns#    |Resource Description Framework (RDF)       |
+|rdfs    |http://www.w3.org/2000/01/rdf-schema#          |RDF Schema 1.1                             |
+|owl     |http://www.w3.org/2002/07/owl#                 |Ontology Web Language (OWL)                |
+|skos    |http://www.w3.org/2004/02/skos/core#           |Simple Knowledge Organization System (SKOS)|
+|uddi    |http://www.uddi.org/schema/uddi_v3#            |Universal Description, Discovery and Integration (UDDI) Schema|
+|did     |https://www.w3.org/ns/did/v1                   |Decentralized IDentifier (DID) |
+|vc      |https://www.w3.org/2018/credentials/v1         |Verifiable Credential (VC)    |
+|sec     |https://w3id.org/security#                     |Security Vocabulary               |
 
 ## Classes
 |            |Organization                               |
