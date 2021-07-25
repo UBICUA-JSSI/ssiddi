@@ -43,14 +43,6 @@ Primary schema of SSI Description, Discovery and Interoperability
 |SubclassOf: |isdl:Interface                             |
 |Properties: |id, description, identifierBag, categoryBag, publishedServices, subscribedServices, signature    |
 
-|            |Credential                                 |
-|------------|-------------------------------------------|
-|Label:      |isdl:Credential                            |
-|Definition: |The logical child of a single Service that contains technical descriptions of an identity service.|
-|URI:        |                                           |
-|Type:       |owl:Class                                  |
-|SubclassOf: |isdl:Interface                             |
-|Properties: |vc:id, vc:type, vc:issuer, vc:issuanceDate, vc:credentialSubject |
 
 ## Properties
 
