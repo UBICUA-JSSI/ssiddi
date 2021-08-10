@@ -16,14 +16,14 @@ tags:
 paths:
   /metadata:
     get:
-      summary: Get the currnt version
+      summary: Get the model version
       responses:
         '200':
-          description: The current version
+          description: The model version
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/version'                 
+                $ref: '#/components/schemas/metadata'                 
   /organisation/{id}:
     get:
       summary: Get an organisation by Id
@@ -47,16 +47,16 @@ components:
     model:
       type: object
       required:
-      - version
+      - metadata
       - organisations      
       properties:
-        version:
-            $ref: '#/components/schemas/version'
+        metadata:
+            $ref: '#/components/schemas/metadata'
         organisations:
           type: array
           items:
             $ref: '#/components/schemas/organisation'
-    version:
+    metadata:
       type: string
       example: ssiddi v1
     organisation:
@@ -68,7 +68,7 @@ components:
       properties:
         id:
           type: string
-          example: e20993d1-2430-462b-a9d0-2f2ead3345f8
+          example: 12345678-abcd-1234-efgh-ab12345678cd
         name:
           type: string
           example: Example University
@@ -87,7 +87,7 @@ components:
       properties:
         id:
           type: string
-          example: e20993d1-2430-462b-a9d0-2f2ead3345f8
+          example: 12345678-abcd-1234-efgh-ab12345678cd
         name:
           type: string
           example: University Credential Issuance
@@ -104,11 +104,11 @@ components:
         createdAt:
           type: string
           format: date-time
-          example: 2021-06-21T18:05:02Z
+          example: 2021-07-21T18:05:02Z
         expirationDate:
           type: string
           format: date-time
-          example: 2022-06-21T18:05:02Z
+          example: 2022-07-21T18:05:02Z
         signature:
           $ref: '#/components/schemas/signature'
     signature:
