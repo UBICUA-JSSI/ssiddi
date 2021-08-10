@@ -4,6 +4,27 @@ info:
   title: SSIDDI Data Model
   description: SSIDDI Data Model
   version: 1.0.0
+  
+servers:
+  - url: http://82.223.203.200:3001/
+    description: SSIDDI Test Server
+    
+tags:
+  - name: SSIDDI Data Model
+    description: SSIDDI Data Model
+
+paths:
+  /ssiddi/version:
+    get:
+      summary: Gets the SSIDDI version
+      description: Gets the SSIDDI version
+      responses:
+        200:
+          description: SSIDDI version
+          content:
+            application/json:
+              schema: 
+                type: object  
 
 components:
   schemas:
@@ -37,6 +58,8 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/service'
+        sigature:
+            $ref: '#/components/schemas/signature'            
     service:
       type: object    
       required:
@@ -51,7 +74,7 @@ components:
           type: string
           example: University Credential Issuance
         accreditation:
-            $ref: '#/components/schemas/accreditation'
+            $ref: '#/components/schemas/accreditation'       
     accreditation:
       type: object
       required:
