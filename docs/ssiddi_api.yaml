@@ -46,7 +46,7 @@ components:
       properties:
         id:
           type: string
-          esample: e20993d1-2430-462b-a9d0-2f2ead3345f8
+          example: "e20993d1-2430-462b-a9d0-2f2ead3345f8"
         name:
           type: string
           example: "University Credential Issuance"
