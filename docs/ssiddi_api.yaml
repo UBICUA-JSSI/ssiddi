@@ -14,7 +14,7 @@ tags:
     description: SSIDDI Data Model
 
 paths:
-  /version:
+  /model/version:
     get:
       summary: Get the current version
       responses:
