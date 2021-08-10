@@ -40,7 +40,26 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/organisation'                
+                $ref: '#/components/schemas/organisation'
+  /services/{id}:
+    get:
+      summary: Get services by organisation Id
+      parameters:
+      - name: id
+        in: path
+        description: Organisation Id
+        required: true
+        schema:
+          type: string      
+      responses:
+        '200':
+          description: Services of a single organisation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/service'                
                 
 components:
   schemas:
