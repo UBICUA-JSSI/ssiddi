@@ -23,25 +23,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/version'
-  /organisations:
-    get:
-      summary: Get all organisations
-      parameters:
-      - name: schema
-        in: query
-        schema:
-          type: object
-        description: organisation schema      
-      responses:
-        '200':
-          description: All organisations
-          content:
-            application/json:
-              schema:
-              type: array
-              items:
-                $ref: '#/components/schemas/organisation'                 
+                $ref: '#/components/schemas/version'                 
   /organisation/{id}:
     get:
       summary: Get an organisation by Id
