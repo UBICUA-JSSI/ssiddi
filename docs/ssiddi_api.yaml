@@ -24,18 +24,16 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/version'
-  /organisation:
+  /organisation/{id}:
     get:
-      summary: Get all accredited organisations
+      summary: Get an organisation by Id
       responses:
         200:
-          description: A list of accredited organisations
+          description: A single organisation
           content:
             application/json:
               schema:
-              type: array
-              items:
-                $ref: '#/components/schemas/version'                
+                $ref: '#/components/schemas/organisation'                
                 
 components:
   schemas:
