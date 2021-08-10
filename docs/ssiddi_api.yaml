@@ -16,14 +16,26 @@ tags:
 paths:
   /model:
     get:
-      summary: Get the model version
+      summary: Get the SSIDDI version
       responses:
         200:
-          description: The model version
+          description: The SSIDDI version
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/version'
+  /organisation:
+    get:
+      summary: Get all SSIDDI organisations  
+      responses:
+        200:
+          description: A single organisation
+          content:
+            application/json:
+              schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/organisation'                 
   /organisation/{id}:
     get:
       summary: Get an organisation by Id
