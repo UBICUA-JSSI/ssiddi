@@ -26,10 +26,16 @@ paths:
                 $ref: '#/components/schemas/version'
   /organisation:
     get:
-      summary: Get all SSIDDI organisations  
+      summary: Get all SSIDDI organisations
+      parameters:
+      - name: schema
+        in: query
+        schema:
+          type: string
+        description: organisation schema      
       responses:
         200:
-          description: A single organisation
+          description: All organisations
           content:
             application/json:
               schema:
