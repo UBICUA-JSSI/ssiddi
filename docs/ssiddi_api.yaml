@@ -14,27 +14,27 @@ tags:
     description: SSIDDI Data Model
 
 paths:
-  /model:
+  /metadata:
     get:
-      summary: Get the SSIDDI version
+      summary: Get the currnt version
       responses:
-        200:
-          description: The SSIDDI version
+        '200':
+          description: The current version
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/version'
   /organisation:
     get:
-      summary: Get all SSIDDI organisations
+      summary: Get all organisations
       parameters:
       - name: schema
         in: query
         schema:
-          type: string
+          type: object
         description: organisation schema      
       responses:
-        200:
+        '200':
           description: All organisations
           content:
             application/json:
@@ -53,7 +53,7 @@ paths:
         schema:
           type: string      
       responses:
-        200:
+        '200':
           description: A single organisation
           content:
             application/json:
