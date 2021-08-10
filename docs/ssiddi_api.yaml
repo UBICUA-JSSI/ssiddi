@@ -14,7 +14,7 @@ tags:
     description: SSIDDI Data Model
 
 paths:
-  /ssiddi/version:
+  /model/version:
     get:
       summary: Get the current version
       responses:
@@ -23,23 +23,23 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/version'
+                $ref: '#/components/schemas/model.version'
                 
 components:
   schemas:
-    ssiddi:
+    model:
       type: object
       required:
       - version
       - organisations      
       properties:
         version:
-            $ref: '#/components/schemas/version'
+            $ref: '#/components/schemas/model.version'
         organisations:
           type: array
           items:
             $ref: '#/components/schemas/organisation'
-    version:
+    model.version:
       type: string
       example: v1
     organisation:
