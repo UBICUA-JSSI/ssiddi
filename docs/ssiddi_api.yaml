@@ -14,16 +14,28 @@ tags:
     description: SSIDDI Data Model
 
 paths:
-  /model/version:
+  /model:
     get:
-      summary: Get the current version
+      summary: Get the model version
       responses:
         200:
-          description: The current version
+          description: The model version
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/version'
+  /organisation:
+    get:
+      summary: Get all accredited organisations
+      responses:
+        200:
+          description: A list of accredited organisations
+          content:
+            application/json:
+              schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/version'                
                 
 components:
   schemas:
@@ -41,7 +53,7 @@ components:
             $ref: '#/components/schemas/organisation'
     version:
       type: string
-      example: v1
+      example: ssiddi v1
     organisation:
       type: object    
       required:
