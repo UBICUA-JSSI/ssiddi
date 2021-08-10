@@ -7,7 +7,7 @@ info:
 
 components:
   schemas:
-    ssiddi:
+    schema.ssiddi:
       type: object
       required:
       - version
@@ -19,11 +19,12 @@ components:
         'organisations':
           type: array
           items:
-            $ref: '#/components/schemas/organisation'
-    organisation:
+            $ref: '#/components/schemas/schema.organisation'
+    schema.organisation:
       required:
       - id
       - name
+      - services
       type: object
       properties:
         id:
@@ -31,4 +32,58 @@ components:
           example: e20993d1-2430-462b-a9d0-2f2ead3345f8
         name:
           type: string
-          example: University
+          example: Example University
+        services:
+          type: array
+          items:
+            $ref: '#/components/schemas/schema.service'
+    schema.service:
+      required:
+      - id
+      - name
+      - accreditation
+      type: object
+      properties:
+        id:
+          type: string
+          esample: e20993d1-2430-462b-a9d0-2f2ead3345f8
+        name:
+          type: string
+          example: University Credential Issuance
+        accreditation:
+            $ref: '#/components/schemas/schema.accreditation'          
+    schema.accreditation:
+      type: object
+      required:
+      - accreditor
+      properties:
+        accreditor:
+          type: string
+          example: did:sov:12345678abcdefg
+        createdAt:
+          type: string
+          format: date-time
+          example: 2021-06-21T18:05:02Z
+        expirationDate:
+          type: string
+          format: date-time
+          example: 2022-06-21T18:05:02Z
+        signature:
+          $ref: '#/components/schemas/schema.signature'
+    schema.signature:
+      type: object
+      properties:
+        created:
+          type: string
+          format: date-time
+          example: 2021-06-21T18:05:02Z
+        text:
+          type: string
+          example: abc...123=
+        type:
+          type: string
+          example: EidasSeal2021
+        verificationMethod:
+          type: string
+          example: did:sov:234567890abcdefg
+          
