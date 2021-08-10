@@ -13,45 +13,45 @@ components:
       - version
       - organisations      
       properties:
-        'version':
+        version:
           type: string
           example: v1
-        'organisations':
+        organisations:
           type: array
           items:
             $ref: '#/components/schemas/organisation'
     organisation:
+      type: object    
       required:
       - id
       - name
       - services
-      type: object
       properties:
         id:
           type: string
           example: e20993d1-2430-462b-a9d0-2f2ead3345f8
         name:
           type: string
-          example: "Example University"
+          example: Example University
         services:
           type: array
           items:
             $ref: '#/components/schemas/service'
     service:
+      type: object    
       required:
       - id
       - name
       - accreditation
-      type: object
       properties:
         id:
           type: string
-          example: "e20993d1-2430-462b-a9d0-2f2ead3345f8"
+          example: e20993d1-2430-462b-a9d0-2f2ead3345f8
         name:
           type: string
-          example: "University Credential Issuance"
+          example: University Credential Issuance
         accreditation:
-            $ref: '#/components/schemas/accreditation'          
+            $ref: '#/components/schemas/accreditation'
     accreditation:
       type: object
       required:
@@ -79,11 +79,11 @@ components:
           example: 2021-06-21T18:05:02Z
         text:
           type: string
-          example: "abc...123="
+          example: abc...123=
         type:
           type: string
           example: EidasSeal2021
         verificationMethod:
           type: string
-          example: "did:sov:234567890abcdefg"
+          example: did:sov:234567890abcdefg
           
