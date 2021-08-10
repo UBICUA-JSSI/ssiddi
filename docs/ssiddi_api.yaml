@@ -7,7 +7,7 @@ info:
 
 components:
   schemas:
-    schema.ssiddi:
+    model.ssiddi:
       type: object
       required:
       - version
@@ -19,8 +19,8 @@ components:
         'organisations':
           type: array
           items:
-            $ref: '#/components/schemas/schema.organisation'
-    schema.organisation:
+            $ref: '#/components/schemas/model.organisation'
+    model.organisation:
       required:
       - id
       - name
@@ -36,8 +36,8 @@ components:
         services:
           type: array
           items:
-            $ref: '#/components/schemas/schema.service'
-    schema.service:
+            $ref: '#/components/schemas/model.service'
+    model.service:
       required:
       - id
       - name
@@ -51,8 +51,8 @@ components:
           type: string
           example: University Credential Issuance
         accreditation:
-            $ref: '#/components/schemas/schema.accreditation'          
-    schema.accreditation:
+            $ref: '#/components/schemas/model.accreditation'          
+    model.accreditation:
       type: object
       required:
       - accreditor
@@ -69,8 +69,8 @@ components:
           format: date-time
           example: 2022-06-21T18:05:02Z
         signature:
-          $ref: '#/components/schemas/schema.signature'
-    schema.signature:
+          $ref: '#/components/schemas/model.signature'
+    model.signature:
       type: object
       properties:
         created:
