@@ -27,6 +27,13 @@ paths:
   /organisation/{id}:
     get:
       summary: Get an organisation by Id
+      parameters:
+      - name: id
+        in: path
+        description: Organisation Id
+        required: true
+        schema:
+          type: string      
       responses:
         200:
           description: A single organisation
