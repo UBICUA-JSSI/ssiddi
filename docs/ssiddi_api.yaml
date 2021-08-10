@@ -3,7 +3,7 @@ openapi: 3.0.1
 info:
   title: SSIDDI Data Model
   description: SSIDDI Data Model
-  version: 1.0
+  version: 1
   
 servers:
   - url: http://82.223.203.200:3001/
@@ -59,7 +59,24 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/service'                
+                  $ref: '#/components/schemas/service' 
+  /service/{id}:
+    get:
+      summary: Get a service by Id
+      parameters:
+      - name: id
+        in: path
+        description: Service Id
+        required: true
+        schema:
+          type: string      
+      responses:
+        '200':
+          description: A single service
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/service'                   
                 
 components:
   schemas:
