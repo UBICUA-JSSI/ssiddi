@@ -3,7 +3,7 @@ openapi: 3.0.1
 info:
   title: SSIDDI Data Model
   description: SSIDDI Data Model
-  version: 1.0.0
+  version: 1.0
   
 servers:
   - url: http://82.223.203.200:3001/
@@ -16,16 +16,15 @@ tags:
 paths:
   /ssiddi/version:
     get:
-      summary: Gets the SSIDDI version
-      description: Gets the SSIDDI version
+      summary: Get the current version
       responses:
         200:
-          description: SSIDDI version
+          description: The current version
           content:
             application/json:
-              schema: 
-                type: object  
-
+              schema:
+                $ref: '#/components/schemas/version'
+                
 components:
   schemas:
     ssiddi:
@@ -35,12 +34,14 @@ components:
       - organisations      
       properties:
         version:
-          type: string
-          example: v1
+            $ref: '#/components/schemas/version'
         organisations:
           type: array
           items:
             $ref: '#/components/schemas/organisation'
+    version:
+      type: string
+      example: v1
     organisation:
       type: object    
       required:
