@@ -146,6 +146,18 @@ components:
             $ref: '#/components/schemas/policy'
         accreditation:
             $ref: '#/components/schemas/accreditation'
+    dictionary:
+      type: object
+      properties:
+        default:
+          type: string
+      required:
+        - default
+      additionalProperties:
+        type: string
+      example:
+        en: Hello
+        es: Hola            
     policy:
       type: object
       properties:
@@ -186,15 +198,3 @@ components:
         verificationMethod:
           type: string
           example: did:sov:234567890abcdefg
-    dictionary:
-      type: object
-      properties:
-        default:
-          type: string
-      required:
-        - default
-      additionalProperties:
-        type: string
-      example:
-        en: Hello
-        es: Hola
