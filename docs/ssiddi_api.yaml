@@ -22,10 +22,10 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/model.metadata'
+                $ref: '#/components/schemas/model:metadata'
             application/xml:
               schema:
-                $ref: '#/components/schemas/model.metadata'                
+                $ref: '#/components/schemas/model:metadata'                
   /organisations:
     get:
       summary: Get SSIDDI organisations by filters
@@ -120,12 +120,12 @@ components:
       - organisations      
       properties:
         metadata:
-            $ref: '#/components/schemas/model.metadata'
+            $ref: '#/components/schemas/model:metadata'
         organisations:
           type: array
           items:
             $ref: '#/components/schemas/model.organisation'
-    model.metadata:      
+    model:metadata:      
       type: object
       properties:
         version:
