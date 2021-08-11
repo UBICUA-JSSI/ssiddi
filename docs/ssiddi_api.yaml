@@ -126,7 +126,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/service'
-        sigature:
+        signature:
             $ref: '#/components/schemas/signature'            
     service:
       type: object    
@@ -144,6 +144,8 @@ components:
           $ref: '#/components/schemas/policy'
         accreditation:
           $ref: '#/components/schemas/accreditation'
+        signature:
+          $ref: '#/components/schemas/signature'         
     dictionary:
       type: object
       additionalProperties:
@@ -157,10 +159,8 @@ components:
           type: string
     policy:
       type: object
-      properties:
-        text:
-          type: string
-          example: Terms and Conditions
+      additionalProperties:
+        $ref: '#/components/schemas/dictionary.entry'
     accreditation:
       type: object
       required:
@@ -177,8 +177,6 @@ components:
           type: string
           format: date-time
           example: 2022-07-21T18:05:02Z
-        signature:
-          $ref: '#/components/schemas/signature'
     signature:
       type: object
       properties:
