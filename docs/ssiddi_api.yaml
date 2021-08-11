@@ -142,6 +142,8 @@ components:
         version:
           type: string
           example: v1.0
+      xml:
+        prefix: 'ssiddi'
     organisations:
       type: array
       items:
@@ -162,6 +164,8 @@ components:
           example: Example University
         services:
           $ref: '#/components/schemas/services'
+      xml:
+        prefix: 'ssiddi'          
     services:
       type: array
       items:
@@ -184,11 +188,22 @@ components:
         accreditation:
           $ref: '#/components/schemas/accreditation'
         signature:
-          $ref: '#/components/schemas/signature'         
+          $ref: '#/components/schemas/signature'
+      xml:
+        prefix: 'ssiddi'
     dictionary:
       type: object
       additionalProperties:
-        type: string
+        $ref: '#/components/schemas/dictionary.entry'
+    dictionary.entry:
+      type: object
+      properties:
+        lang:
+          type: string
+          xml:
+            attribute: true
+        text:
+          type: string
     accreditation:
       type: object
       required:
