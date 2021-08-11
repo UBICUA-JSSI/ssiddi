@@ -22,7 +22,23 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/metadata'                 
+                $ref: '#/components/schemas/model.metadata'
+  /organisations:
+    get:
+      summary: Get SSIDDI organisations by filters
+      parameters:
+      - in: query
+        name: filter
+        description: A wildcard filter
+        schema:
+          type: string          
+      responses:
+        '200':
+          description: All organisations satisfied by wildcard filters
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/model.organisation'                
   /organisation/{id}:
     get:
       summary: Get an organisation by Id
@@ -44,7 +60,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/organisation'
+                $ref: '#/components/schemas/model.organisation'
   /services/{id}:
     get:
       summary: Get services by organisation Id
@@ -101,15 +117,18 @@ components:
       - organisations      
       properties:
         metadata:
-            $ref: '#/components/schemas/metadata'
+            $ref: '#/components/schemas/model.metadata'
         organisations:
           type: array
           items:
-            $ref: '#/components/schemas/organisation'
-    metadata:
-      type: string
-      example: ssiddi v1
-    organisation:
+            $ref: '#/components/schemas/model.organisation'
+    model.metadata:      
+      type: object
+      properties:
+        version:
+          type: string
+          example: ssiddi v1.0
+    model.organisation:
       type: object    
       required:
       - id
