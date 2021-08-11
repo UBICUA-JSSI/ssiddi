@@ -1,9 +1,8 @@
-openapi: 3.0.1
-
+openapi: 3.0.0
 info:
   title: SSIDDI Data Model
   description: SSIDDI Data Model
-  version: 1
+  version: 1.0.0
   
 servers:
   - url: http://82.223.203.200:3001/
@@ -33,7 +32,13 @@ paths:
         description: Organisation Id
         required: true
         schema:
-          type: string      
+          type: string
+      - name: lang
+        in: path
+        description: Language parameter (en as default)
+        required: false
+        schema:
+          type: string          
       responses:
         '200':
           description: A single organisation
@@ -50,7 +55,13 @@ paths:
         description: Organisation Id
         required: true
         schema:
-          type: string      
+          type: string
+      - name: lang
+        in: path
+        description: Language parameter (en as default)
+        required: false
+        schema:
+          type: string          
       responses:
         '200':
           description: Services of a single organisation
@@ -69,7 +80,13 @@ paths:
         description: Service Id
         required: true
         schema:
-          type: string      
+          type: string
+      - name: lang
+        in: path
+        description: Language parameter (en as default)
+        required: false
+        schema:
+          type: string          
       responses:
         '200':
           description: A single service
@@ -127,8 +144,16 @@ components:
         name:
           type: string
           example: University Credential Issuance
+        policy:
+            $ref: '#/components/schemas/policy'
         accreditation:
-            $ref: '#/components/schemas/accreditation'       
+            $ref: '#/components/schemas/accreditation'
+    policy:
+      type: object
+      properties:
+        text:
+          type: string
+          example: Terms and Conditions
     accreditation:
       type: object
       required:
