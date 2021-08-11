@@ -27,14 +27,14 @@ paths:
     get:
       summary: Get an organisation by Id
       parameters:
-      - name: id
-        in: path
+      - in: path
+        name: id
         description: Organisation Id
         required: true
         schema:
           type: string
-      - name: lang
-        in: query
+      - in: query
+        name: lang
         description: Language parameter (en as default)
         schema:
           type: string          
@@ -49,14 +49,14 @@ paths:
     get:
       summary: Get services by organisation Id
       parameters:
-      - name: id
-        in: path
+      - in: path
+        name: id
         description: Organisation Id
         required: true
         schema:
           type: string
-      - name: lang
-        in: query
+      - in: query
+        name: lang
         description: Language parameter (en as default)
         schema:
           type: string          
@@ -73,14 +73,14 @@ paths:
     get:
       summary: Get a service by Id
       parameters:
-      - name: id
-        in: path
+      - in: path
+        name: id
         description: Service Id
         required: true
         schema:
           type: string
-      - name: lang
-        in: query
+      - in: query
+        name: lang
         description: Language parameter (en as default)
         schema:
           type: string          
