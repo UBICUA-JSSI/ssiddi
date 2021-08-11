@@ -34,9 +34,8 @@ paths:
         schema:
           type: string
       - name: lang
-        in: path
+        in: query
         description: Language parameter (en as default)
-        required: false
         schema:
           type: string          
       responses:
@@ -57,9 +56,8 @@ paths:
         schema:
           type: string
       - name: lang
-        in: path
+        in: query
         description: Language parameter (en as default)
-        required: false
         schema:
           type: string          
       responses:
@@ -82,9 +80,8 @@ paths:
         schema:
           type: string
       - name: lang
-        in: path
+        in: query
         description: Language parameter (en as default)
-        required: false
         schema:
           type: string          
       responses:
