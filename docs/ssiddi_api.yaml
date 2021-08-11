@@ -139,25 +139,22 @@ components:
           type: string
           example: 12345678-abcd-1234-efgh-ab12345678cd
         description:
-          type: array
-          items:
-            $ref: '#/components/schemas/dictionary'
+          $ref: '#/components/schemas/dictionary'
         policy:
-            $ref: '#/components/schemas/policy'
+          $ref: '#/components/schemas/policy'
         accreditation:
-            $ref: '#/components/schemas/accreditation'
+          $ref: '#/components/schemas/accreditation'
     dictionary:
       type: object
-      properties:
-        default:
-          type: string
-      required:
-        - default
       additionalProperties:
-        type: string
-      example:
-        en: Hello
-        es: Hola            
+        $ref: '#/components/schemas/dictionary.entry'
+    dictionary.entry:
+      type: object
+      properties:
+        lang:
+          type: string
+        text:
+          type: string
     policy:
       type: object
       properties:
