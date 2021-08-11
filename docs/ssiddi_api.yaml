@@ -41,10 +41,10 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/organisation' 
+                $ref: '#/components/schemas/organisations' 
             application/xml:
               schema:
-                $ref: '#/components/schemas/organisation'                    
+                $ref: '#/components/schemas/organisations'                    
   /organisation/{uuid}:
     get:
       summary: Get an organisation by uuid
@@ -91,14 +91,10 @@ paths:
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/service'
+                $ref: '#/components/schemas/services'
             application/xml:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/service'                   
+                $ref: '#/components/schemas/services'                   
   /service/{uuid}:
     get:
       summary: Get a service by uuid
