@@ -23,6 +23,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/model.metadata'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/model.metadata'                
   /organisations:
     get:
       summary: Get SSIDDI organisations by filters
