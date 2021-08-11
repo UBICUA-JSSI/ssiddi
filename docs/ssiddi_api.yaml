@@ -185,16 +185,16 @@ components:
           example: EidasSeal2021
         verificationMethod:
           type: string
-          example: did:sov:234567890abcdefg     
-      dictionary:
-        type: object
-        properties:
-          default:
-            type: string
-        required:
-          - default
-        additionalProperties:
+          example: did:sov:234567890abcdefg
+    dictionary:
+      type: object
+      properties:
+        default:
           type: string
-        example:
-          en: Hello
-          es: Hola
+      required:
+        - default
+      additionalProperties:
+        type: string
+      example:
+        en: Hello
+        es: Hola
