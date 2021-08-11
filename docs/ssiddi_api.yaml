@@ -32,12 +32,12 @@ paths:
       parameters:
       - in: query
         name: filter
-        description: A wildcard filter
+        description: a wildcard parameter
         schema:
           type: string          
       responses:
         '200':
-          description: All organisations satisfied by wildcard filters
+          description: all organisations filtered by wildcard parameter 
           content:
             application/json:
               schema:
@@ -45,24 +45,24 @@ paths:
             application/xml:
               schema:
                 $ref: '#/components/schemas/organisation'                    
-  /organisation/{id}:
+  /organisation/{uuid}:
     get:
-      summary: Get an organisation by Id
+      summary: Get an organisation by uuid
       parameters:
       - in: path
-        name: id
-        description: Organisation Id
+        name: uuid
+        description: organisation uuid
         required: true
         schema:
           type: string
       - in: query
         name: lang
-        description: Language parameter (en as default)
+        description: language parameter (en as default)
         schema:
           type: string          
       responses:
         '200':
-          description: A single organisation
+          description: a single organisation
           content:
             application/json:
               schema:
@@ -70,13 +70,13 @@ paths:
             application/xml:
               schema:
                 $ref: '#/components/schemas/organisation'                
-  /services/{id}:
+  /services/{uuid}:
     get:
-      summary: Get services by organisation Id
+      summary: Get services by organisation uuid
       parameters:
       - in: path
-        name: id
-        description: Organisation Id
+        name: uuid
+        description: Organisation uuid
         required: true
         schema:
           type: string
@@ -99,12 +99,12 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/service'                   
-  /service/{id}:
+  /service/{uuid}:
     get:
-      summary: Get a service by Id
+      summary: Get a service by uuid
       parameters:
       - in: path
-        name: id
+        name: uuid
         description: Service Id
         required: true
         schema:
@@ -134,25 +134,30 @@ components:
       - organisations      
       properties:
         metadata:
-            $ref: '#/components/schemas/metadata'
+          $ref: '#/components/schemas/metadata'
         organisations:
-          type: array
-          items:
-            $ref: '#/components/schemas/organisation'
+          $ref: '#/components/schemas/organisations'
     metadata:      
       type: object
       properties:
+        name:
+          type: string
+          example: ssiddi      
         version:
           type: string
-          example: ssiddi v1.0
+          example: v1.0
+    organisations:
+      type: array
+      items:
+        $ref: '#/components/schemas/organisation'    
     organisation:
       type: object    
       required:
-      - id
+      - uuid
       - name
       - services
       properties:
-        id:
+        uuid:
           type: string
           format: uuid
           example: 12345678-abcd-1234-efgh-ab12345678cd
@@ -160,33 +165,33 @@ components:
           type: string
           example: Example University
         services:
-          type: array
-          items:
-            $ref: '#/components/schemas/service'
-        signature:
-            $ref: '#/components/schemas/signature'            
+          $ref: '#/components/schemas/services'
+    services:
+      type: array
+      items:
+        $ref: '#/components/schemas/service'    
     service:
       type: object    
       required:
-      - id
+      - uuid
       - description
       - accreditation
       properties:
-        id:
+        uuid:
           type: string
           format: uuid          
           example: 12345678-abcd-1234-efgh-ab12345678ef
         description:
           $ref: '#/components/schemas/dictionary'
         policy:
-          $ref: '#/components/schemas/policy'
+          $ref: '#/components/schemas/dictionary'
         accreditation:
           $ref: '#/components/schemas/accreditation'
         signature:
           $ref: '#/components/schemas/signature'         
     dictionary:
-      type: array
-      items:
+      type: object
+      additionalProperties:
         $ref: '#/components/schemas/dictionary.entry'
     dictionary.entry:
       type: object
@@ -195,10 +200,6 @@ components:
           type: string
         text:
           type: string
-    policy:
-      type: array
-      items:
-        $ref: '#/components/schemas/dictionary.entry'
     accreditation:
       type: object
       required:
