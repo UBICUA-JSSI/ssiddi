@@ -188,14 +188,7 @@ components:
     dictionary:
       type: object
       additionalProperties:
-        $ref: '#/components/schemas/dictionary.entry'
-    dictionary.entry:
-      type: object
-      properties:
-        lang:
-          type: string
-        text:
-          type: string
+        type: string
     accreditation:
       type: object
       required:
