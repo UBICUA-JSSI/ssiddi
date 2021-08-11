@@ -132,15 +132,16 @@ components:
       type: object    
       required:
       - id
-      - name
+      - description
       - accreditation
       properties:
         id:
           type: string
           example: 12345678-abcd-1234-efgh-ab12345678cd
-        name:
-          type: string
-          example: University Credential Issuance
+        description:
+          type: array
+          items:
+            $ref: '#/components/schemas/dictionary'
         policy:
             $ref: '#/components/schemas/policy'
         accreditation:
@@ -184,5 +185,16 @@ components:
           example: EidasSeal2021
         verificationMethod:
           type: string
-          example: did:sov:234567890abcdefg
-          
+          example: did:sov:234567890abcdefg     
+      dictionary:
+        type: object
+        properties:
+          default:
+            type: string
+        required:
+          - default
+        additionalProperties:
+          type: string
+        example:
+          en: Hello
+          es: Hola
