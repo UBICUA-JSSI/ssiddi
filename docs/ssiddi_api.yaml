@@ -22,10 +22,10 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/model:metadata'
+                $ref: '#/components/schemas/metadata'
             application/xml:
               schema:
-                $ref: '#/components/schemas/model:metadata'                
+                $ref: '#/components/schemas/metadata'                
   /organisations:
     get:
       summary: Get SSIDDI organisations by filters
@@ -41,7 +41,10 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/model.organisation'                
+                $ref: '#/components/schemas/organisation' 
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/organisation'                    
   /organisation/{id}:
     get:
       summary: Get an organisation by Id
@@ -63,7 +66,10 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/model.organisation'
+                $ref: '#/components/schemas/organisation'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/organisation'                
   /services/{id}:
     get:
       summary: Get services by organisation Id
@@ -87,7 +93,12 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/service' 
+                  $ref: '#/components/schemas/service'
+            application/xml:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/service'                   
   /service/{id}:
     get:
       summary: Get a service by Id
@@ -109,7 +120,10 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/service'                   
+                $ref: '#/components/schemas/service'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/service'                
                 
 components:
   schemas:
@@ -120,18 +134,18 @@ components:
       - organisations      
       properties:
         metadata:
-            $ref: '#/components/schemas/model:metadata'
+            $ref: '#/components/schemas/metadata'
         organisations:
           type: array
           items:
-            $ref: '#/components/schemas/model.organisation'
-    model:metadata:      
+            $ref: '#/components/schemas/organisation'
+    metadata:      
       type: object
       properties:
         version:
           type: string
           example: ssiddi v1.0
-    model.organisation:
+    organisation:
       type: object    
       required:
       - id
@@ -140,6 +154,7 @@ components:
       properties:
         id:
           type: string
+          format: uuid
           example: 12345678-abcd-1234-efgh-ab12345678cd
         name:
           type: string
@@ -159,7 +174,8 @@ components:
       properties:
         id:
           type: string
-          example: 12345678-abcd-1234-efgh-ab12345678cd
+          format: uuid          
+          example: 12345678-abcd-1234-efgh-ab12345678ef
         description:
           $ref: '#/components/schemas/dictionary'
         policy:
@@ -169,8 +185,8 @@ components:
         signature:
           $ref: '#/components/schemas/signature'         
     dictionary:
-      type: object
-      additionalProperties:
+      type: array
+      items:
         $ref: '#/components/schemas/dictionary.entry'
     dictionary.entry:
       type: object
@@ -180,8 +196,8 @@ components:
         text:
           type: string
     policy:
-      type: object
-      additionalProperties:
+      type: array
+      items:
         $ref: '#/components/schemas/dictionary.entry'
     accreditation:
       type: object
