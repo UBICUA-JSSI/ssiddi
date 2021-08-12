@@ -196,18 +196,12 @@ components:
       xml:
         prefix: 'ssiddi'
     dictionary:
-      type: array
-      items:
-        $ref: '#/components/schemas/dictionary.entry' 
-    dictionary.entry:
       type: object
-      properties:
-        lang:
-          type: string
-          xml:
-            attribute: true
-        text:
-          type: string
+      additionalProperties:
+        type: string
+      example:
+        en: Hello
+        es: Hola
     accreditation:
       type: object
       required:
