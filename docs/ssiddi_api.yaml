@@ -196,9 +196,9 @@ components:
       xml:
         prefix: 'ssiddi'
     dictionary:
-      type: object
-      additionalProperties:
-        $ref: '#/components/schemas/dictionary.entry'
+      type: array
+      items:
+        $ref: '#/components/schemas/dictionary.entry' 
     dictionary.entry:
       type: object
       properties:
