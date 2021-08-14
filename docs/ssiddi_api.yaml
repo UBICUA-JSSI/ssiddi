@@ -176,12 +176,19 @@ components:
           type: string
           format: uuid          
           example: 12345678-abcd-1234-efgh-ab12345678ef
+        status:
+          type: string
+          example: available
         description:
           $ref: '#/components/schemas/dictionary'
         policy:
           $ref: '#/components/schemas/dictionary'
         accreditation:
           $ref: '#/components/schemas/accreditation'
+        subsribers:
+          type: array
+          items:
+            $ref: '#/components/schemas/organisation'
         interfaces:
           type: array
           items:
