@@ -164,8 +164,8 @@ components:
           items:
             $ref: '#/components/schemas/service'
     categoryBag:
-      type: array
-      items:
+      type: object
+      additionalProperties:
         $ref: '#/components/schemas/reference'
     reference:
       type: object
@@ -176,12 +176,18 @@ components:
         key:
           type: string
           example: http://dd.eionet.europa.eu/vocabulary/eurostat/nace_r2/
+          xml:
+            attribute: true
         name:
           type: string
-          example: Higher education
+          example: Higher education     
+          xml:
+            attribute: true
         value:
           type: string
           example: P854    
+          xml:
+            attribute: true
     service:
       type: object    
       required:
