@@ -164,8 +164,8 @@ components:
           items:
             $ref: '#/components/schemas/service'
     categoryBag:
-      type: object
-      additionalProperties:
+      type: array
+      items:
         $ref: '#/components/schemas/reference'
     reference:
       type: object
@@ -205,19 +205,36 @@ components:
         description:
           $ref: '#/components/schemas/dictionary'
         policy:
-          $ref: '#/components/schemas/dictionary'
+          $ref: '#/components/schemas/policy'
         accreditation:
           $ref: '#/components/schemas/accreditation'
         subsribers:
-          type: array
-          items:
-            $ref: '#/components/schemas/organisation'
+          $ref: '#/components/schemas/subscribers'
         interfaces:
           type: array
           items:
             $ref: '#/components/schemas/interface'           
         signature:
           $ref: '#/components/schemas/signature'
+    policy:
+      type: object
+      required:
+        - name
+        - text
+        - decisionPoint
+      properties:
+        name:
+          type: string
+          example: Credential policy
+        text:
+          $ref: '#/components/schemas/dictionary'
+        decisionPoint:
+          type: string
+          example: https://example-university.org
+    subscribers:
+      type: array
+      items:
+        $ref: '#/components/schemas/reference'        
     dictionary:
       type: object
       additionalProperties:
