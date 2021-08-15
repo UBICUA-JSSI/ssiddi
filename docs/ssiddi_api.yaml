@@ -143,8 +143,6 @@ components:
         version:
           type: string
           example: v1.0
-      xml:
-        prefix: 'ssiddi'
     organisation:
       type: object    
       required:
@@ -159,12 +157,31 @@ components:
         name:
           type: string
           example: Example University
+        categoryBag:
+          $ref: '#/components/schemas/categoryBag'         
         services:
           type: array
           items:
-            $ref: '#/components/schemas/service'      
-      xml:
-        prefix: 'ssiddi'   
+            $ref: '#/components/schemas/service'
+    categoryBag:
+      type: array
+      items:
+        $ref: '#/components/schemas/reference'
+    reference:
+      type: object
+      required:
+        - key
+        - value
+      properties:
+        key:
+          type: string
+          example: http://dd.eionet.europa.eu/vocabulary/eurostat/nace_r2/
+        name:
+          type: string
+          example: Higher education
+        value:
+          type: string
+          example: P854    
     service:
       type: object    
       required:
@@ -195,8 +212,6 @@ components:
             $ref: '#/components/schemas/interface'           
         signature:
           $ref: '#/components/schemas/signature'
-      xml:
-        prefix: 'ssiddi'
     dictionary:
       type: object
       additionalProperties:
