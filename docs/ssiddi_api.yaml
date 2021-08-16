@@ -41,14 +41,10 @@ paths:
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/organisation' 
+                $ref: '#/components/schemas/organisations' 
             application/xml:
-              schema:
-                type: array
-                items:              
-                  $ref: '#/components/schemas/organisation'                    
+              schema:             
+                $ref: '#/components/schemas/organisations'                    
   /organisation/{uuid}:
     get:
       summary: Get an organisation by uuid
@@ -124,6 +120,8 @@ components:
   schemas:
     model:
       type: object
+      xml:
+        prefix: ssiddi
       required:
       - metadata
       - organisations      
@@ -131,14 +129,11 @@ components:
         metadata:
           $ref: '#/components/schemas/metadata'
         organisations:
-          type: array
-          xml:
-            wrapped: true          
-          items:
-            $ref: '#/components/schemas/organisation'
+          $ref: '#/components/schemas/organisations'
     metadata:      
       type: object
       xml:
+        prefix: ssiddi
         name: metadata
       properties:
         name:
@@ -147,10 +142,20 @@ components:
         version:
           type: string
           example: v1.0
+    organisations:
+      type: array
+      xml:
+        prefix: ssiddi
+        name: organisations
+        wrapped: true          
+        items:
+          $ref: '#/components/schemas/organisation'    
     organisation:
       type: object
       xml:
+        prefix: ssiddi
         name: organisation
+        wrapped: true
       required:
       - uuid
       - name
