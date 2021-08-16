@@ -132,10 +132,14 @@ components:
           $ref: '#/components/schemas/metadata'
         organisations:
           type: array
+          xml:
+            wrapped: true          
           items:
             $ref: '#/components/schemas/organisation'
     metadata:      
       type: object
+      xml:
+        name: metadata
       properties:
         name:
           type: string
@@ -144,7 +148,9 @@ components:
           type: string
           example: v1.0
     organisation:
-      type: object    
+      type: object
+      xml:
+        name: organisation
       required:
       - uuid
       - name
@@ -158,21 +164,21 @@ components:
           type: string
           example: Example University
         category:
-          $ref: '#/components/schemas/category'         
+          type: array
+          xml:
+            wrapped: true          
+          items:
+            $ref: '#/components/schemas/reference'
         services:
           type: array
+          xml:
+            wrapped: true          
           items:
             $ref: '#/components/schemas/service'
-    category:
-      properties:
-        type: array
-        items:
-          $ref: '#/components/schemas/reference'
     reference:
       type: object
-      required:
-        - key
-        - value
+      xml:
+        name: reference
       properties:
         key:
           type: string
@@ -189,8 +195,13 @@ components:
           example: P854    
           xml:
             attribute: true
+      required:
+        - key
+        - value     
     service:
-      type: object    
+      type: object
+      xml:
+        name: service
       required:
       - uuid
       - description
@@ -204,47 +215,68 @@ components:
           type: string
           example: available
         description:
+          xml:
+            wrapped: true        
           $ref: '#/components/schemas/dictionary'
         policy:
           $ref: '#/components/schemas/policy'
         accreditation:
           $ref: '#/components/schemas/accreditation'
         subsribers:
-          $ref: '#/components/schemas/subscribers'
+          type: array
+          xml:
+            wrapped: true
+          items:        
+            $ref: '#/components/schemas/reference'
         interfaces:
           type: array
+          xml:
+            wrapped: true          
           items:
-            $ref: '#/components/schemas/interface'           
+            $ref: '#/components/schemas/interface'
         signature:
           $ref: '#/components/schemas/signature'
     policy:
       type: object
+      xml:
+        name: policy
       required:
         - name
-        - text
+        - description
         - decisionPoint
       properties:
         name:
           type: string
           example: Credential policy
-        text:
+        description:
           $ref: '#/components/schemas/dictionary'
+          xml:
+            wrapped: true
         decisionPoint:
           type: string
           example: https://example-university.org
-    subscribers:
+    dictionary:
       type: array
       items:
-        $ref: '#/components/schemas/reference'        
-    dictionary:
+        $ref: '#/components/schemas/dictionary.entry'
+    dictionary.entry:
       type: object
-      additionalProperties:
-        type: string
-      example:
-        en: Hello
-        es: Hola
+      xml:
+        name: text
+      properties:
+        lang:
+          type: string
+          example: en
+          xml:
+            name: 'xml:lang'
+            attribute: true
+        text:
+          type: string
+          example: text in english      
     accreditation:
       type: object
+      xml:
+        name: accreditation
       required:
       - accreditor
       properties:
@@ -261,6 +293,8 @@ components:
           example: 2022-07-21T18:05:02Z
     signature:
       type: object
+      xml:
+        name: signature
       properties:
         created:
           type: string
