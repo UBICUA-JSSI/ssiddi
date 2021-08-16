@@ -229,9 +229,7 @@ components:
           items:        
             $ref: '#/components/schemas/reference'
         interfaces:
-          type: array
-          xml:
-            wrapped: true          
+          type: array         
           items:
             $ref: '#/components/schemas/interface'
         signature:
@@ -311,6 +309,8 @@ components:
           example: did:sov:234567890abcdefg
     interface:
       type: object
+      xml:
+        name: interface
       properties:
         uuid:
           type: string
