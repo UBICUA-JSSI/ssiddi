@@ -206,6 +206,7 @@ components:
     service:
       type: object
       xml:
+        prefix: ssiddi
         name: service
       required:
       - uuid
@@ -242,6 +243,7 @@ components:
     policy:
       type: object
       xml:
+        prefix: ssiddi
         name: policy
       required:
         - name
@@ -260,16 +262,14 @@ components:
           example: https://example-university.org
     dictionary:
       type: object
-      properties:
-        lang:
-          type: string
-        required:
-          - lang
-        xml:
-          name: 'xml:lang'
-          attribute: true
+      xml:
+        name: text
+        attribute: true
       additionalProperties:
         type: string
+      example:
+        en: Hello
+        es: Hola
     accreditation:
       type: object
       xml:
@@ -309,6 +309,7 @@ components:
     interface:
       type: object
       xml:
+        prefix: ssiddi
         name: interface
       properties:
         uuid:
