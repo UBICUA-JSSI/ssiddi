@@ -264,7 +264,6 @@ components:
       type: object
       xml:
         name: text
-        attribute: true
       additionalProperties:
         type: string
       example:
