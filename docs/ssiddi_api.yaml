@@ -259,23 +259,17 @@ components:
           type: string
           example: https://example-university.org
     dictionary:
-      type: array
-      items:
-        $ref: '#/components/schemas/dictionary.entry'
-    dictionary.entry:
       type: object
-      xml:
-        name: text
       properties:
         lang:
           type: string
-          example: en
-          xml:
-            name: 'xml:lang'
-            attribute: true
-        text:
-          type: string
-          example: text in english      
+        required:
+          - lang
+        xml:
+          name: 'xml:lang'
+          attribute: true
+      additionalProperties:
+        type: string
     accreditation:
       type: object
       xml:
