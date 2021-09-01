@@ -173,13 +173,19 @@ components:
           items:
             $ref: '#/components/schemas/reference'
           xml:
+            wrapped: true
+        subscriptions:
+          type: array
+          items:
+            $ref: '#/components/schemas/reference'
+          xml:
             wrapped: true            
         services:
           type: array        
           items:
             $ref: '#/components/schemas/service'
           xml:
-            wrapped: true            
+            wrapped: true
     reference:
       type: object
       xml:
@@ -209,11 +215,12 @@ components:
         prefix: ssiddi
         name: service
       required:
-      - uuid
+      - id
+      - publisher
       - description
       - accreditation
       properties:
-        uuid:
+        id:
           type: string
           format: uuid          
           example: 12345678-abcd-1234-efgh-ab12345678ef
@@ -228,6 +235,8 @@ components:
           $ref: '#/components/schemas/policy'
         accreditation:
           $ref: '#/components/schemas/accreditation'
+        publisher:
+          $ref: '#/components/schemas/reference'
         subsribers:
           type: array
           xml:
