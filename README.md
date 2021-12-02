@@ -17,10 +17,7 @@ SSI Description, Disovery and Interoperability (SSIDDI) is an open initiative ad
 
 **SSI Service** is an ensemble of management operations related to the digital identity and its verifiable attributes (_aka_ verifiable credentials). 
 
-Our analysis is limited by the provider-consumer type of identity relationships. In a typical scenario, a user acquires its credentials (identity card, driving licence, university diploma, medical insurance, etc.) from a trusted service and then uses them in relations with other identity or business services. Within the SSI model, such a scenario implies that an identity owner, as a DID Subject and/or VC Holder, establishes legal relations with:
-
-- **SSI Service Publisher/Provider** is a public entity accredited to publish SSI Services and provide them as DID Controller and/or VC Issuer. Note that the prerequisite of previous accreditation is important from the viewpoint of legal and organizational aspects of the ecosystem governance.
-- **SSI Service Subscriber/Consumer** is a public entity that is subscribed to SSI Services and utilizes them in the Access Management (AM) and/or Business Processes (BP). Note that, the same entity may play both roles depending on a particular context. 
+Our analysis is limited by the provider-consumer type of identity relationships. In a typical scenario, a user acquires its credentials (identity card, driving licence, university diploma, medical insurance, etc.) from a trusted service and then uses them in relations with other identity or business services. Within the SSI model, such a scenario implies that an identity owner, as a DID Subject and VC Holder, establishes legal relations with SSI Service providers: DID Controller and VC Issuer.
 
 In a very general manner, we introduce a SSI Service lifecycle that includes the following basic stages:
 
