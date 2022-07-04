@@ -152,5 +152,5 @@ The SSI Service Registry architecture must contain the following features:
 
 ## Opened Questions
 
-
+- [NACE SKOS rev.2](nace_skos_v1.0.rdf)
 
