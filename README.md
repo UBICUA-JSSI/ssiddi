@@ -155,5 +155,5 @@ The SSI Service Registry architecture must contain the following features:
 - [NACE SKOS rev.2](nace_skos_v1.0.rdf)
 
 ## About
-![logo](https://github.com/UBICUA-JSSI/ssido.client/blob/main/logo-ngi-essiflab.png) Done within the frame of the NGI DAPSI Project with financial support from the European Commission H2020-ICT-2018-2020 (Grant Agreement No.: 871498).
+![logo](https://github.com/UBICUA-JSSI/ssiddi/blob/main/logo_dapsi.png) Done within the frame of the NGI DAPSI Project with financial support from the European Commission H2020-ICT-2018-2020 (Grant Agreement No.: 871498).
 
