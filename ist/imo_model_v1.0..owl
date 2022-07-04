@@ -1,1 +1,959 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE rdf:RDF [
+  <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns">
+  <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema">
+  <!ENTITY owl "http://www.w3.org/2002/07/owl">
+  <!ENTITY dc "http://purl.org/dc/elements/1.1/">
+  <!ENTITY dct "http://purl.org/dc/terms">
+  <!ENTITY skos "http://www.w3.org/2004/02/skos/core">
+  <!ENTITY obo "http://purl.obolibrary.org/obo/">  
+  <!ENTITY bfo "http://purl.obolibrary.org/obo/bfo.owl">
+  <!ENTITY iao "http://purl.obolibrary.org/obo/iao.owl">  
+  <!ENTITY imo "http://www.ubicua.com/imo/v1.0">
+  <!ENTITY DEFAULT "http://www.ubicua.com/imo/v1.0">
+  <!ENTITY THIS "http://www.ubicua.com/imo/v1.0">
+]>
+<rdf:RDF
+  xmlns:rdf="&rdf;#"
+  xmlns:rdfs="&rdfs;#"
+  xmlns:owl="&owl;#"
+  xmlns:dc="&dc;#"
+  xmlns:dct="&dct;#"
+  xmlns:skos="&skos;#"
+  xmlns:obo="&obo;#"  
+  xmlns:bfo="&bfo;#"
+  xmlns:iao="&iao;#"
+  xmlns="&DEFAULT;#"
+  xml:base="&THIS;">
+    <owl:Ontology rdf:about="&THIS">
+		<owl:versionInfo xml:lang="en">Initial</owl:versionInfo>	
+		<rdfs:label xml:lang="en">Identity Management Ontology (IMO)</rdfs:label>	
+        <rdfs:comment xml:lang="en"></rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="&THIS"/>
+		<owl:imports>
+			<owl:Ontology rdf:about="&bfo;"/>
+			<owl:Ontology rdf:about="&iao;"/>			
+		</owl:imports>
+        <dc:contributor>Andrei Mikhin</dc:contributor>
+        <dc:contributor>Vladimir Perez</dc:contributor>
+        <dc:contributor>Jesus Rebollo</dc:contributor>			
+    </owl:Ontology>
+	
+    <owl:AnnotationProperty rdf:about="&obo;IAO_0000111">
+        <rdfs:isDefinedBy rdf:resource="http://purl.obolibrary.org/obo/iao.owl"/>
+        <rdfs:label xml:lang="en">editor preferred term</rdfs:label>
+    </owl:AnnotationProperty>	
+	
+    <owl:AnnotationProperty rdf:about="&obo;IAO_0000112">
+        <rdfs:isDefinedBy rdf:resource="http://purl.obolibrary.org/obo/iao.owl"/>
+        <rdfs:label xml:lang="en">example of usage</rdfs:label>
+    </owl:AnnotationProperty>
 
+    <owl:AnnotationProperty rdf:about="&obo;IAO_0000115">
+        <rdfs:isDefinedBy rdf:resource="http://purl.obolibrary.org/obo/iao.owl"/>
+        <rdfs:label xml:lang="en">definition</rdfs:label>
+    </owl:AnnotationProperty>
+	
+    <owl:AnnotationProperty rdf:about="&obo;IAO_0000116">
+        <rdfs:isDefinedBy rdf:resource="http://purl.obolibrary.org/obo/iao.owl"/>
+        <rdfs:label xml:lang="en">editor note</rdfs:label>
+    </owl:AnnotationProperty>
+
+    <owl:AnnotationProperty rdf:about="&obo;IAO_0000117">
+        <rdfs:isDefinedBy rdf:resource="http://purl.obolibrary.org/obo/iao.owl"/>
+        <rdfs:label xml:lang="en">term editor</rdfs:label>
+    </owl:AnnotationProperty>	
+
+    <owl:AnnotationProperty rdf:about="&obo;IAO_0000118">
+        <rdfs:isDefinedBy rdf:resource="http://purl.obolibrary.org/obo/iao.owl"/>
+        <rdfs:label xml:lang="en">alternative term</rdfs:label>
+    </owl:AnnotationProperty>
+
+    <owl:AnnotationProperty rdf:about="&obo;IAO_0000119">
+        <rdfs:isDefinedBy rdf:resource="http://purl.obolibrary.org/obo/iao.owl"/>
+        <rdfs:label xml:lang="en">definition source</rdfs:label>
+    </owl:AnnotationProperty>
+
+    <owl:AnnotationProperty rdf:about="&obo;IAO_0000232">
+        <rdfs:isDefinedBy rdf:resource="http://purl.obolibrary.org/obo/iao.owl"/>
+        <rdfs:label xml:lang="en">curator note</rdfs:label>
+    </owl:AnnotationProperty>
+
+    <owl:AnnotationProperty rdf:about="&obo;IAO_0000412">
+        <rdfs:isDefinedBy rdf:resource="http://purl.obolibrary.org/obo/iao.owl"/>
+        <rdfs:label xml:lang="en">imported from</rdfs:label>
+    </owl:AnnotationProperty>
+
+    <owl:AnnotationProperty rdf:about="&obo;IAO_0000600">
+        <rdfs:isDefinedBy rdf:resource="http://purl.obolibrary.org/obo/iao.owl"/>
+        <rdfs:label xml:lang="en">elucidation</rdfs:label>
+    </owl:AnnotationProperty>
+
+    <owl:AnnotationProperty rdf:about="&obo;IAO_0000601">
+        <rdfs:isDefinedBy rdf:resource="http://purl.obolibrary.org/obo/iao.owl"/>
+        <rdfs:label xml:lang="en">has associated axiom(nl)</rdfs:label>
+    </owl:AnnotationProperty>
+
+    <owl:AnnotationProperty rdf:about="&obo;IAO_0000602">
+        <rdfs:isDefinedBy rdf:resource="http://purl.obolibrary.org/obo/iao.owl"/>
+        <rdfs:label xml:lang="en">has associated axiom(fol)</rdfs:label>
+    </owl:AnnotationProperty>
+
+    <owl:AnnotationProperty rdf:about="&obo;IAO_0010000">
+        <rdfs:isDefinedBy rdf:resource="http://purl.obolibrary.org/obo/iao.owl"/>
+        <rdfs:label xml:lang="en">has axiom label</rdfs:label>
+    </owl:AnnotationProperty>
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/contributor"/>
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/member"/>
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/license"/>
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2000/01/rdf-schema#isDefinedBy"/>
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2000/01/rdf-schema#seeAlso"/>
+    <owl:AnnotationProperty rdf:about="http://xmlns.com/foaf/0.1/homepage"/>
+    <owl:AnnotationProperty rdf:about="http://xmlns.com/foaf/0.1/mbox"/>
+	
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+<!-- History of Object Properties -->
+    <ObjectProperty rdf:about="&imo;IMO_1000001">
+        <rdfs:label xml:lang="en">has history</rdfs:label>
+        <rdfs:domain rdf:resource="&imo;IMO_0000001"/>
+        <rdfs:range rdf:resource="&imo;IMO_0001011"/>		
+        <obo:IAO_0000118 xml:lang="en">has_history</obo:IAO_0000118>	
+    </ObjectProperty>
+    <ObjectProperty rdf:about="&imo;IMO_1001001">
+        <rdfs:label xml:lang="en">history of</rdfs:label>		
+        <rdfs:domain rdf:resource="&imo;IMO_0001011"/>
+        <rdfs:range rdf:resource="&imo;IMO_0000001"/>
+        <owl:inverseOf rdf:resource="&imo;IMO_1000001"/>		
+        <obo:IAO_0000118 xml:lang="en">history_of</obo:IAO_0000118>	
+    </ObjectProperty>	
+<!-- End of History Properties -->
+<!-- Disposition Properties -->
+    <owl:ObjectProperty rdf:about="&imo;IMO_1000021">
+        <rdfs:label xml:lang="en">has disposition</rdfs:label>	
+        <rdfs:subPropertyOf rdf:resource="&obo;RO_0000053"/>
+        <rdfs:domain rdf:resource="&imo;IMO_0000001"/>
+        <rdfs:range rdf:resource="&imo;IMO_0000021"/>
+        <obo:IAO_0000115 xml:lang="en">a relation between an independent continuant (the bearer) and a disposition</obo:IAO_0000115>
+        <obo:IAO_0000118 xml:lang="en">has_disposition</obo:IAO_0000118>
+    </owl:ObjectProperty>
+    <owl:ObjectProperty rdf:about="&imo;IMO_1001021">
+        <rdfs:label xml:lang="en">disposition of</rdfs:label>	
+        <rdfs:subPropertyOf rdf:resource="&obo;RO_0000092"/>
+        <owl:inverseOf rdf:resource="&imo;IMO_1000021"/>		
+        <rdfs:domain rdf:resource="&imo;IMO_0000021"/>
+        <rdfs:range rdf:resource="&imo;IMO_0000001"/>
+        <obo:IAO_0000118 xml:lang="en">disposition_of</obo:IAO_0000118>		
+    </owl:ObjectProperty>
+<!-- End of Disposition Properties -->	
+<!-- Role Properties --> 
+    <owl:ObjectProperty rdf:about="&imo;IMO_1000031">
+        <rdfs:label xml:lang="en">has role</rdfs:label>	
+        <rdfs:subPropertyOf rdf:resource="&obo;RO_0000087"/>
+        <rdfs:domain rdf:resource="&imo;IMO_0000001"/>
+        <rdfs:range rdf:resource="&imo;IMO_0000031"/>
+        <obo:IAO_0000112 xml:lang="en"></obo:IAO_0000112>
+        <obo:IAO_0000115 xml:lang="en"></obo:IAO_0000115>
+        <obo:IAO_0000116 xml:lang="en"></obo:IAO_0000116>
+        <obo:IAO_0000118 xml:lang="en">has_role</obo:IAO_0000118>
+    </owl:ObjectProperty>
+	<owl:ObjectProperty rdf:about="&imo;IMO_1001031">
+        <rdfs:label xml:lang="en">role of</rdfs:label>	
+        <rdfs:domain rdf:resource="&imo;IMO_0000031"/>
+        <rdfs:range rdf:resource="&imo;IMO_0000001"/>
+        <owl:inverseOf rdf:resource="&imo;IMO_1000031"/>
+        <obo:IAO_0000112 xml:lang="en"></obo:IAO_0000112>
+        <obo:IAO_0000115 xml:lang="en"></obo:IAO_0000115>
+        <obo:IAO_0000116 xml:lang="en"></obo:IAO_0000116>
+        <obo:IAO_0000118 xml:lang="en">is role of</obo:IAO_0000118>
+        <obo:IAO_0000118 xml:lang="en">role_of</obo:IAO_0000118>
+    </owl:ObjectProperty>	
+<!-- End of Role Properties -->	
+<!-- Realize Properties --> 
+	<owl:ObjectProperty rdf:about="&imo;IMO_1000051">
+        <rdfs:label xml:lang="en">realizes</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="&obo;BFO_0000066"/>		
+        <rdfs:domain rdf:resource="&imo;IMO_1000031"/>
+        <rdfs:range rdf:resource="&imo;IMO_1001021"/>
+        <obo:IAO_0000111 xml:lang="en">realizes</obo:IAO_0000111>
+        <obo:IAO_0000112 xml:lang="en"></obo:IAO_0000112>
+        <obo:IAO_0000600 xml:lang="en"></obo:IAO_0000600>
+    </owl:ObjectProperty>
+    <owl:ObjectProperty rdf:about="&imo;IMO_1001051">
+        <rdfs:label xml:lang="en">realized in</rdfs:label>	
+		<rdfs:subClassOf rdf:resource="&bfo;BFO_0000054"/>	
+        <owl:inverseOf rdf:resource="&imo;IMO_1000051"/>
+        <rdfs:domain rdf:resource="&imo;IMO_0001021"/>
+        <rdfs:range rdf:resource="&imo;IMO_0000031"/>
+        <obo:IAO_0000111 xml:lang="en">realized in</obo:IAO_0000111>
+        <obo:IAO_0000112 xml:lang="en"></obo:IAO_0000112>
+        <obo:IAO_0000118 xml:lang="en">is realized in</obo:IAO_0000118>
+        <obo:IAO_0000118 xml:lang="en">realized_in</obo:IAO_0000118>
+    </owl:ObjectProperty>
+<!-- End of Realize Properties -->	
+<!-- Occurs-Contains Properties -->	
+    <owl:ObjectProperty rdf:about="&imo;IMO_1000061">
+        <rdfs:label xml:lang="en">occurs in</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="&obo;BFO_0000066"/>
+        <rdfs:domain rdf:resource="&imo;IMO_0001001"/>
+        <rdfs:range rdf:resource="&imo;IMO_00000081"/>
+        <obo:IAO_0000118 xml:lang="en">occurs_in</obo:IAO_0000118>	
+    </owl:ObjectProperty>	
+    <owl:ObjectProperty rdf:about="&imo;IMO_1001061">
+        <rdfs:label xml:lang="en">contains process</rdfs:label>	
+        <rdfs:subPropertyOf rdf:resource="&obo;BFO_0000067"/>
+        <owl:inverseOf rdf:resource="imo;IMO_1000061"/>		
+        <rdfs:domain rdf:resource="&imo;IMO_0000081"/>
+        <rdfs:range rdf:resource="&imo;IMO_00000071"/>
+    </owl:ObjectProperty>
+<!-- End of Occurs-Contains Properties -->	
+<!-- Participant Properties -->	
+    <owl:ObjectProperty rdf:about="&imo;IMO_1000071">
+        <rdfs:label xml:lang="en">has participant</rdfs:label>
+		<rdfs:subPropertyOf rdf:resource="&obo;RO_0000057"/>
+        <rdfs:domain rdf:resource="&imo;IMO_0001001"/>
+        <rdfs:range rdf:resource="&imo;IMO_0000001"/>
+        <obo:IAO_0000111 xml:lang="en">has participant</obo:IAO_0000111>
+        <obo:IAO_0000112 xml:lang="en"></obo:IAO_0000112>
+        <obo:IAO_0000115 xml:lang="en"></obo:IAO_0000115>
+        <obo:IAO_0000116 xml:lang="en"></obo:IAO_0000116>
+        <obo:IAO_0000118 xml:lang="en">has_participant</obo:IAO_0000118>
+    </owl:ObjectProperty>
+    <owl:ObjectProperty rdf:about="&imo;IMO_1001071">
+        <rdfs:label xml:lang="en">participates in</rdfs:label>	
+		<rdfs:subPropertyOf rdf:resource="&obo;RO_0000056"/>	
+        <owl:inverseOf rdf:resource="&imo;IMO_1000071"/>
+        <rdfs:domain rdf:resource="&imo;IMO_0000001"/>
+        <rdfs:range rdf:resource="&imo;IMO_0001001"/>
+        <obo:IAO_0000111 xml:lang="en">participates in</obo:IAO_0000111>
+        <obo:IAO_0000112 xml:lang="en"></obo:IAO_0000112>
+        <obo:IAO_0000115 xml:lang="en"></obo:IAO_0000115>
+        <obo:IAO_0000118 xml:lang="en">participates_in</obo:IAO_0000118>
+    </owl:ObjectProperty>
+<!-- End of Participant Properties -->		
+<!-- Quality Properties -->
+    <owl:ObjectProperty rdf:about="&imo;IMO_1000081">
+		<rdfs:label xml:lang="en">has quality</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="&obo;RO_0000086"/>
+        <rdfs:domain rdf:resource="&imo;IMO_0000001"/>		
+        <rdfs:range rdf:resource="&imo;IMO_0000019"/>
+        <obo:IAO_0000118 xml:lang="en">has_quality</obo:IAO_0000118>
+    </owl:ObjectProperty>	
+    <owl:ObjectProperty rdf:about="&imo;IMO_1001081">
+        <rdfs:subPropertyOf rdf:resource="&obo;RO_0000080"/>
+        <rdfs:domain rdf:resource="&imo;IMO_0000019"/>		
+        <rdfs:range rdf:resource="&imo;IMO_0000001"/>		
+        <owl:inverseOf rdf:resource="&imo;IMO_1000081"/>
+        <obo:IAO_0000112 xml:lang="en"></obo:IAO_0000112>
+        <obo:IAO_0000115 xml:lang="en"></obo:IAO_0000115>
+        <obo:IAO_0000118 xml:lang="en">is quality of</obo:IAO_0000118>
+        <obo:IAO_0000118 xml:lang="en">quality_of</obo:IAO_0000118>
+        <rdfs:label xml:lang="en">quality of</rdfs:label>
+    </owl:ObjectProperty>
+<!-- End of Quality Properties -->
+<!-- Member Properties -->
+    <owl:ObjectProperty rdf:about="&imo;IMO_1000082">
+        <rdfs:label xml:lang="en">has member</rdfs:label>	
+        <rdfs:subPropertyOf rdf:resource="&obo;RO_0002351"/>
+        <rdfs:domain rdf:resource="&imo;IMO_0000012"/>
+        <rdfs:range rdf:resource="&imo;IMO_0000019"/>		
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <obo:IAO_0000112></obo:IAO_0000112>		
+        <obo:IAO_0000115>A mereological relation between a collection and an item.</obo:IAO_0000115>
+        <obo:IAO_0000118 xml:lang="en">has_member</obo:IAO_0000118>
+    </owl:ObjectProperty>
+    <owl:ObjectProperty rdf:about="&imo;IMO_1001082">
+        <rdfs:label xml:lang="en">member of</rdfs:label>
+        <owl:inverseOf rdf:resource="&imo;IMO_1000082"/>
+        <rdfs:domain rdf:resource="&imo;IMO_0000019"/>
+        <rdfs:range rdf:resource="&imo;IMO_0000012"/>		
+        <obo:IAO_0000112></obo:IAO_0000112>
+        <obo:IAO_0000115>is member of is a mereological relation between a item and a collection.</obo:IAO_0000115>
+        <obo:IAO_0000118>is member of</obo:IAO_0000118>
+        <obo:IAO_0000118>member part of</obo:IAO_0000118>
+    </owl:ObjectProperty>
+<!-- End of Member Properties -->
+<!-- Concretized Properties -->	
+	<owl:ObjectProperty rdf:about="&imo;IMO_1000091">
+        <rdfs:label xml:lang="en">concretizes</rdfs:label>	
+        <rdfs:subPropertyOf rdf:resource="&obo;RO_0000059"/>	
+        <rdfs:domain rdf:resource="&imo;IMO_0000019"/>
+        <rdfs:range rdf:resource="&imo;IMO_0000014"/>
+        <obo:IAO_0000112 xml:lang="en"></obo:IAO_0000112>
+        <obo:IAO_0000115 xml:lang="en"></obo:IAO_0000115>
+		<obo:IAO_0000118 xml:lang="en">contains_record</obo:IAO_0000118>
+	</owl:ObjectProperty>
+	<owl:ObjectProperty rdf:about="&imo;IMO_1001091">
+        <rdfs:label xml:lang="en">concretized as</rdfs:label>	
+        <owl:inverseOf rdf:resource="&imo;IMO_1000091"/>
+        <rdfs:domain rdf:resource="&imo;IMO_0000014"/>
+        <rdfs:range rdf:resource="&imo;IMO_0000019"/>
+        <obo:IAO_0000112 xml:lang="en"></obo:IAO_0000112>
+        <obo:IAO_0000115 xml:lang="en"></obo:IAO_0000115>
+    </owl:ObjectProperty>
+<!-- End of Concretized Properties -->
+<!-- Location Properties -->
+    <owl:ObjectProperty rdf:about="&imo;IMO_1000101">
+        <rdfs:label xml:lang="en">located in</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="&obo;RO_0001025"/>		
+        <rdfs:domain rdf:resource="&imo;IMO_1000101"/>
+        <obo:IAO_0000111 xml:lang="en">located in</obo:IAO_0000111>
+        <obo:IAO_0000112 xml:lang="en"></obo:IAO_0000112>
+        <obo:IAO_0000115 xml:lang="en"></obo:IAO_0000115>
+        <obo:IAO_0000118 xml:lang="en">located_in</obo:IAO_0000118>
+    </owl:ObjectProperty>
+    <owl:ObjectProperty rdf:about="&imo;IMO_1001101">
+        <rdfs:label xml:lang="en">location of</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="&obo;RO_0001015"/>		
+        <owl:inverseOf rdf:resource="&imo;IMO_1000101"/>
+        <obo:IAO_0000111 xml:lang="en">is location of</obo:IAO_0000111>
+        <obo:IAO_0000112 xml:lang="en"></obo:IAO_0000112>
+        <obo:IAO_0000115 xml:lang="en"></obo:IAO_0000115>
+        <obo:IAO_0000118 xml:lang="en">location_of</obo:IAO_0000118>
+    </owl:ObjectProperty>
+<!-- End of Location Properties -->
+<!-- Input Properties -->
+    <owl:ObjectProperty rdf:about="&imo;IMO_1000102">
+        <rdfs:label xml:lang="en">has input</rdfs:label>	
+        <rdfs:subPropertyOf rdf:resource="&obo;RO_0002233"/>
+        <rdfs:domain rdf:resource="&imo;IMO_1000101"/>
+        <rdfs:range rdf:resource="&imo;IMO_0000019"/>		
+        <obo:IAO_0000112 xml:lang="en"></obo:IAO_0000112>
+        <obo:IAO_0000115 xml:lang="en"></obo:IAO_0000115>
+        <obo:IAO_0000118 xml:lang="en">has_input</obo:IAO_0000118>		
+    </owl:ObjectProperty>
+    <owl:ObjectProperty rdf:about="&imo;IMO_1001102">
+        <rdfs:label xml:lang="en">input of</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="&obo;RO_0002352"/>		
+        <owl:inverseOf rdf:resource="&imo;IMO_1000102"/>		
+        <obo:IAO_0000115>inverse of has input</obo:IAO_0000115>
+        <obo:IAO_0000118 xml:lang="en">input_of</obo:IAO_0000118>
+    </owl:ObjectProperty>
+<!-- End of Input Properties -->
+<!-- Output Properties -->
+    <owl:ObjectProperty rdf:about="&imo;IMO_1000103">
+        <rdfs:label xml:lang="en">has output</rdfs:label>	
+        <rdfs:subPropertyOf rdf:resource="&obo;RO_0002234"/>
+        <obo:IAO_0000112 xml:lang="en"></obo:IAO_0000112>
+        <obo:IAO_0000115 xml:lang="en"></obo:IAO_0000115>
+        <obo:IAO_0000118>has_output</obo:IAO_0000118>
+    </owl:ObjectProperty>
+    <owl:ObjectProperty rdf:about="&imo;IMO_1001103">
+        <rdfs:subPropertyOf rdf:resource="&obo;RO_0002353"/>
+        <owl:inverseOf rdf:resource="&imo;IMO_1000103"/>		
+        <obo:IAO_0000115>inverse of has output</obo:IAO_0000115>
+        <rdfs:label xml:lang="en">output of</rdfs:label>
+    </owl:ObjectProperty>
+<!-- end of Output Properties -->
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     --> 
+<!-- Independent Continuants -->	 
+	<owl:Class rdf:about="&imo;IMO_0000001">
+        <rdfs:label xml:lang="en">registrable entity</rdfs:label>	
+		<rdfs:subClassOf rdf:resource="&obo;BFO_0000040"/>
+        <obo:IAO_0000112 xml:lang="en">biological organism</obo:IAO_0000112>
+        <obo:IAO_0000112 xml:lang="en">engineered artefact</obo:IAO_0000112>	
+        <obo:IAO_0000116 xml:lang="en">An independent continuant which is a bearer of quality set.</obo:IAO_0000116>
+        <obo:IAO_0000118 xml:lang="en">observable entity</obo:IAO_0000118>
+        <obo:IAO_0000118 xml:lang="en">interpretable entity</obo:IAO_0000118>
+        <obo:IAO_0000118 xml:lang="en">ipse-identity</obo:IAO_0000118>			
+    </owl:Class>	
+    <owl:Class rdf:about="&imo;IMO_0000002">
+        <rdfs:label xml:lang="en">context entity</rdfs:label>	
+		<rdfs:subClassOf rdf:resource="&imo;IMO_0000002"/>	
+        <obo:IAO_0000112 xml:lang="en"></obo:IAO_0000112>		
+        <obo:IAO_0000112 xml:lang="en">government entity</obo:IAO_0000112>
+        <obo:IAO_0000112 xml:lang="en">narrator</obo:IAO_0000112>			
+        <obo:IAO_0000116 xml:lang="en">A continuant which is a bearer of contextuality disposition.</obo:IAO_0000116>
+        <obo:IAO_0000118 xml:lang="en">narrative identity</obo:IAO_0000118>
+        <obo:IAO_0000118 xml:lang="en">tridentity</obo:IAO_0000118>		
+    </owl:Class>	
+    <owl:Class rdf:about="&imo;IMO_0000003">
+        <rdfs:label xml:lang="en">contextual registry entity</rdfs:label>	
+		<rdfs:subClassOf rdf:resource="&imo;IMO_0000002"/>
+        <obo:IAO_0000112 xml:lang="en">brain</obo:IAO_0000112>
+        <obo:IAO_0000112 xml:lang="en">piece of paper for writing</obo:IAO_0000112>		
+        <obo:IAO_0000112 xml:lang="en">hardware for data storing</obo:IAO_0000112>		
+        <obo:IAO_0000112 xml:lang="en">experimental equipment for detecting particulas</obo:IAO_0000112>		
+        <obo:IAO_0000116 xml:lang="en">A material entity which has a capacity to register an identity state.</obo:IAO_0000116>
+        <obo:IAO_0000118 xml:lang="en">observer</obo:IAO_0000118>
+        <obo:IAO_0000118 xml:lang="en">idem-coidentity</obo:IAO_0000118>		
+        <obo:IAO_0000118 xml:lang="en">coidentity</obo:IAO_0000118>		
+    </owl:Class>
+    <owl:Class rdf:about="&imo;IMO_0000004">
+        <rdfs:label xml:lang="en">contextually registered entity</rdfs:label>	
+		<rdfs:subClassOf rdf:resource="&imo;IMO_0000002"/>
+        <obo:IAO_0000112 xml:lang="en">detected particle</obo:IAO_0000112>		
+        <obo:IAO_0000112 xml:lang="en">natural person</obo:IAO_0000112>
+        <obo:IAO_0000112 xml:lang="en">organization</obo:IAO_0000112>			
+        <obo:IAO_0000116 xml:lang="en">A matter-information aggegate which becomes a bearer of identity state through contextual registration.</obo:IAO_0000116>
+        <obo:IAO_0000118 xml:lang="en">observed</obo:IAO_0000118>	
+        <obo:IAO_0000118 xml:lang="en">idem-identity</obo:IAO_0000118>
+		<obo:IAO_0000118 xml:lang="en">identity</obo:IAO_0000118>	
+    </owl:Class>
+<!-- End of Independent Continuants -->
+<!-- Generally Dependent Continuants -->
+    <owl:Class rdf:about="&imo;IMO_0000011">
+		<rdfs:label xml:lang="en">schema</rdfs:label>
+		<rdfs:subClassOf rdf:resource="&obo;IAO_0000030"/>
+        <obo:IAO_0000112 xml:lang="en">plan</obo:IAO_0000112>			
+        <obo:IAO_0000116 xml:lang="en">A schema which is used by a contextualizer to establish conditions, rules, norms for functioning entities within a given context.</obo:IAO_0000116>
+        <obo:IAO_0000118 xml:lang="en">identity_schema</obo:IAO_0000118>
+        <obo:IAO_0000118 xml:lang="en">plan</obo:IAO_0000118>
+        <obo:IAO_0000118 xml:lang="en">descritor</obo:IAO_0000118>		
+        <rdfs:comment></rdfs:comment>
+    </owl:Class>
+    <owl:Class rdf:about="&imo;IMO_0000012">
+		<rdfs:label xml:lang="en">record</rdfs:label>
+		<rdfs:subClassOf rdf:resource="&obo;IAO_0000030"/>
+        <obo:IAO_0000112 xml:lang="en">data structure</obo:IAO_0000112>			
+        <obo:IAO_0000116 xml:lang="en">An information content entity which is a representation of registered identity state.</obo:IAO_0000116>
+        <obo:IAO_0000118 xml:lang="en">identity_record</obo:IAO_0000118>		
+        <rdfs:comment></rdfs:comment>
+    </owl:Class>
+    <owl:Class rdf:about="&imo;IMO_0000013">
+		<rdfs:label xml:lang="en">reference</rdfs:label>
+		<rdfs:subClassOf rdf:resource="&obo;IAO_0020000"/>
+        <obo:IAO_0000112 xml:lang="en">identifier</obo:IAO_0000112>			
+        <obo:IAO_0000116 xml:lang="en">An identifier which is assigned by a register entity to a registered entity during a registration process to provide its uniqueness within a given context.</obo:IAO_0000116>
+        <obo:IAO_0000118 xml:lang="en">identifier</obo:IAO_0000118>
+        <obo:IAO_0000118 xml:lang="en">index</obo:IAO_0000118>		
+        <obo:IAO_0000118 xml:lang="en">name</obo:IAO_0000118>
+        <obo:IAO_0000118 xml:lang="en">identity_reference</obo:IAO_0000118>		
+        <rdfs:comment></rdfs:comment>
+    </owl:Class>
+    <owl:Class rdf:about="&imo;IMO_0000014">
+		<rdfs:label xml:lang="en">attribute</rdfs:label>
+		<rdfs:subClassOf rdf:resource="&obo;IAO_0000030"/>
+        <obo:IAO_0000112 xml:lang="en">data structure</obo:IAO_0000112>			
+        <obo:IAO_0000116 xml:lang="en"></obo:IAO_0000116>
+        <obo:IAO_0000118 xml:lang="en">identity_attribute</obo:IAO_0000118>		
+        <rdfs:comment></rdfs:comment>
+    </owl:Class>
+    <owl:Class rdf:about="&imo;IMO_0000015">
+		<rdfs:label xml:lang="en">identifier</rdfs:label>
+		<rdfs:subClassOf rdf:resource="&obo;IAO_0000030"/>
+        <obo:IAO_0000112 xml:lang="en">data structure</obo:IAO_0000112>			
+        <obo:IAO_0000116 xml:lang="en"></obo:IAO_0000116>
+        <obo:IAO_0000118 xml:lang="en">identity_identifier</obo:IAO_0000118>		
+        <rdfs:comment></rdfs:comment>
+    </owl:Class>	
+<!-- End of Generally Dependent Continuants -->
+<!-- Relational Qualities -->
+    <owl:Class rdf:about="&imo;IMO_0000051">
+		<rdfs:label xml:lang="en">identity relaton</rdfs:label>
+		<rdfs:subClassOf rdf:resource="&obo;IAO_0000030"/>
+        <obo:IAO_0000112 xml:lang="en">relation</obo:IAO_0000112>			
+        <obo:IAO_0000116 xml:lang="en">A quality inheres in its bearer at all times for which the quality exists.</obo:IAO_0000116>
+        <obo:IAO_0000118 xml:lang="en">identity_quality</obo:IAO_0000118>		
+        <rdfs:comment></rdfs:comment>
+    </owl:Class>
+    <owl:Class rdf:about="&imo;IMO_0000052">
+		<rdfs:label xml:lang="en">equivalence relation</rdfs:label>
+		<rdfs:subClassOf rdf:resource="&obo;BFO_0000145"/>
+        <obo:IAO_0000112 xml:lang="en">equivalence</obo:IAO_0000112>			
+        <obo:IAO_0000116 xml:lang="en"></obo:IAO_0000116>
+        <obo:IAO_0000118 xml:lang="en">equivalence_relation</obo:IAO_0000118>		
+        <rdfs:comment></rdfs:comment>
+    </owl:Class>
+    <owl:Class rdf:about="&imo;IMO_0000053">
+		<rdfs:label xml:lang="en">reflexivity relation</rdfs:label>
+		<rdfs:subClassOf rdf:resource="&imo;IMO_0000017"/>
+        <obo:IAO_0000112 xml:lang="en">reflexivity</obo:IAO_0000112>			
+        <obo:IAO_0000116 xml:lang="en"></obo:IAO_0000116>
+        <obo:IAO_0000118 xml:lang="en">reflexivity_relation</obo:IAO_0000118>		
+        <rdfs:comment></rdfs:comment>
+    </owl:Class>
+    <owl:Class rdf:about="&imo;IMO_0000054">
+		<rdfs:label xml:lang="en">symmetry relation</rdfs:label>
+		<rdfs:subClassOf rdf:resource="&imo;IMO_0000017"/>
+        <obo:IAO_0000112 xml:lang="en">symmetry</obo:IAO_0000112>			
+        <obo:IAO_0000116 xml:lang="en"></obo:IAO_0000116>
+        <obo:IAO_0000118 xml:lang="en">symmetry_relation</obo:IAO_0000118>		
+        <rdfs:comment></rdfs:comment>
+    </owl:Class>
+    <owl:Class rdf:about="&imo;IMO_0000055">
+		<rdfs:label xml:lang="en">transitivity relation</rdfs:label>
+		<rdfs:subClassOf rdf:resource="&imo;IMO_0000017"/>
+        <obo:IAO_0000112 xml:lang="en">transitivity</obo:IAO_0000112>			
+        <obo:IAO_0000116 xml:lang="en"></obo:IAO_0000116>
+        <obo:IAO_0000118 xml:lang="en">transitivity_relation</obo:IAO_0000118>		
+        <rdfs:comment></rdfs:comment>
+    </owl:Class>
+    <owl:Class rdf:about="&imo;IMO_0000056">
+		<rdfs:label xml:lang="en">metric relation</rdfs:label>
+		<rdfs:subClassOf rdf:resource="&obo;BFO_0000145"/>
+        <obo:IAO_0000112 xml:lang="en">equivalence</obo:IAO_0000112>			
+        <obo:IAO_0000116 xml:lang="en"></obo:IAO_0000116>
+        <obo:IAO_0000118 xml:lang="en">equivalence_relation</obo:IAO_0000118>		
+        <rdfs:comment></rdfs:comment>
+    </owl:Class>
+    <owl:Class rdf:about="&imo;IMO_0000057">
+		<rdfs:label xml:lang="en">norm relation</rdfs:label>
+		<rdfs:subClassOf rdf:resource="&obo;BFO_0000145"/>
+        <obo:IAO_0000112 xml:lang="en">equivalence</obo:IAO_0000112>			
+        <obo:IAO_0000116 xml:lang="en"></obo:IAO_0000116>
+        <obo:IAO_0000118 xml:lang="en">equivalence_relation</obo:IAO_0000118>		
+        <rdfs:comment></rdfs:comment>
+    </owl:Class>	
+<!-- End of Relational Qualities -->	
+<!-- Dispositions -->
+	<owl:Class rdf:about="&imo;IMO_0000021">
+        <rdfs:label xml:lang="en">identity dispostion</rdfs:label>
+		<rdfs:subClassOf rdf:resource="&bfo;BFO_0000016"/>		
+        <obo:IAO_0000112 xml:lang="en">disposition</obo:IAO_0000112>
+        <obo:IAO_0000116 xml:lang="en">A disposition of an entity to possess an identity state.</obo:IAO_0000116>
+        <obo:IAO_0000118 xml:lang="en"></obo:IAO_0000118>		
+    </owl:Class>	
+	<owl:Class rdf:about="&imo;IMO_0000022">
+        <rdfs:label xml:lang="en">contextuality</rdfs:label>	
+		<rdfs:subClassOf rdf:resource="&imo;IMO_0000021"/>	
+        <obo:IAO_0000112 xml:lang="en">disposition</obo:IAO_0000112>
+        <obo:IAO_0000116 xml:lang="en">A disposition of an entity to contextualize an identity state.</obo:IAO_0000116>
+        <obo:IAO_0000118 xml:lang="en">narrativity</obo:IAO_0000118>
+        <obo:IAO_0000118 xml:lang="en">descriptivity</obo:IAO_0000118>		
+    </owl:Class>
+	<owl:Class rdf:about="&imo;IMO_0000023">
+		<rdfs:subClassOf rdf:resource="&imo;IMO_0000021"/>	
+        <rdfs:label xml:lang="en">compositionality</rdfs:label>
+        <obo:IAO_0000112 xml:lang="en">disposition</obo:IAO_0000112>
+        <obo:IAO_0000116 xml:lang="en">A disposition of an entity to compose an identity state.</obo:IAO_0000116>		
+        <obo:IAO_0000118 xml:lang="en">structurality</obo:IAO_0000118>	
+    </owl:Class>	
+	<owl:Class rdf:about="&imo;IMO_0000024">	
+        <rdfs:label xml:lang="en">registrability</rdfs:label>
+		<rdfs:subClassOf rdf:resource="&imo;IMO_0000021"/>
+        <obo:IAO_0000112 xml:lang="en">disposition</obo:IAO_0000112>	
+        <obo:IAO_0000116 xml:lang="en">A disposition of an entity to register an identity state.</obo:IAO_0000116>	
+        <obo:IAO_0000118 xml:lang="en">observability</obo:IAO_0000118>		
+        <obo:IAO_0000118 xml:lang="en">writeability</obo:IAO_0000118>
+        <obo:IAO_0000118 xml:lang="en">recordability</obo:IAO_0000118>		
+    </owl:Class>	
+	<owl:Class rdf:about="&imo;IMO_0000025">
+        <rdfs:label xml:lang="en">regulabillity</rdfs:label>	
+		<rdfs:subClassOf rdf:resource="&imo;IMO_0000021"/>
+        <obo:IAO_0000112 xml:lang="en">disposition</obo:IAO_0000112>
+        <obo:IAO_0000116 xml:lang="en">A disposition of an entity to control an identity state.</obo:IAO_0000116>
+        <obo:IAO_0000118 xml:lang="en">controllability</obo:IAO_0000118>	
+    </owl:Class>
+	<owl:Class rdf:about="&imo;IMO_0000026">
+        <rdfs:label xml:lang="en">resolvability</rdfs:label>	
+		<rdfs:subClassOf rdf:resource="&imo;IMO_0000021"/>
+        <obo:IAO_0000112 xml:lang="en">disposition</obo:IAO_0000112>
+        <obo:IAO_0000116 xml:lang="en">A disposition of an entity to resolve an identity state.</obo:IAO_0000116>
+        <obo:IAO_0000118 xml:lang="en"></obo:IAO_0000118>	
+    </owl:Class>	
+	<owl:Class rdf:about="&imo;IMO_0000027">
+        <rdfs:label xml:lang="en">transitivity</rdfs:label>	
+		<rdfs:subClassOf rdf:resource="&imo;IMO_0000021"/>	
+        <obo:IAO_0000112 xml:lang="en">disposition</obo:IAO_0000112>		
+        <obo:IAO_0000116 xml:lang="en">A disposition of an entity to transform an identity state.</obo:IAO_0000116>
+        <obo:IAO_0000118 xml:lang="en">transitivity</obo:IAO_0000118>
+        <obo:IAO_0000118 xml:lang="en">functionality</obo:IAO_0000118>		
+    </owl:Class>		
+<!-- End of Dispositions -->
+<!-- Roles -->	
+    <owl:Class rdf:about="&imo;IMO_0000031">
+		<rdfs:label xml:lang="en">identity agent</rdfs:label>
+		<rdfs:subClassOf rdf:resource="&obo;BFO_0000023"/>
+        <obo:IAO_0000112 xml:lang="en">role</obo:IAO_0000112>			
+        <obo:IAO_0000116 xml:lang="en">A role of identity agent.</obo:IAO_0000116>
+        <obo:IAO_0000118 xml:lang="en">operator</obo:IAO_0000118>			
+    </owl:Class>
+    <owl:Class rdf:about="&imo;IMO_0000032">
+		<rdfs:label xml:lang="en">context agent</rdfs:label>
+		<rdfs:subClassOf rdf:resource="&IMO_0000031"/>
+        <obo:IAO_0000112 xml:lang="en">role</obo:IAO_0000112>			
+        <obo:IAO_0000116 xml:lang="en">A role of contextual agent.</obo:IAO_0000116>
+        <obo:IAO_0000118 xml:lang="en">product</obo:IAO_0000118>
+    </owl:Class>	
+    <owl:Class rdf:about="&imo;IMO_0000033">
+		<rdfs:label xml:lang="en">composition agent</rdfs:label>
+		<rdfs:subClassOf rdf:resource="&IMO_0000031"/>
+        <obo:IAO_0000112 xml:lang="en">role</obo:IAO_0000112>			
+        <obo:IAO_0000116 xml:lang="en">A role of composition agent.</obo:IAO_0000116>
+        <obo:IAO_0000118 xml:lang="en">product</obo:IAO_0000118>
+    </owl:Class>	
+    <owl:Class rdf:about="&imo;IMO_0000034">
+		<rdfs:label xml:lang="en">registration agent</rdfs:label>
+		<rdfs:subClassOf rdf:resource="&IMO_0000031"/>
+        <obo:IAO_0000112 xml:lang="en">role</obo:IAO_0000112>			
+        <obo:IAO_0000116 xml:lang="en">A role of registration agent.</obo:IAO_0000116>
+        <obo:IAO_0000118 xml:lang="en">writer</obo:IAO_0000118>
+        <obo:IAO_0000118 xml:lang="en">inscriber</obo:IAO_0000118>		
+    </owl:Class>
+    <owl:Class rdf:about="&imo;IMO_0000035">
+		<rdfs:label xml:lang="en">regulation agent</rdfs:label>
+		<rdfs:subClassOf rdf:resource="&imo;IMO_0000031"/>
+        <obo:IAO_0000112 xml:lang="en">role</obo:IAO_0000112>			
+        <obo:IAO_0000116 xml:lang="en">A role of regulation agent.</obo:IAO_0000116>
+        <obo:IAO_0000118 xml:lang="en">controller</obo:IAO_0000118>		
+        <obo:IAO_0000118 xml:lang="en">prescriber</obo:IAO_0000118>		
+    </owl:Class>
+    <owl:Class rdf:about="&imo;IMO_0000036">
+		<rdfs:label xml:lang="en">resolution agent</rdfs:label>
+		<rdfs:subClassOf rdf:resource="&IMO_0000031"/>
+        <obo:IAO_0000112 xml:lang="en">role</obo:IAO_0000112>			
+        <obo:IAO_0000116 xml:lang="en">A role of regulation agent.</obo:IAO_0000116>
+        <obo:IAO_0000118 xml:lang="en">intention</obo:IAO_0000118>
+        <obo:IAO_0000118 xml:lang="en">verifier</obo:IAO_0000118>	
+		<obo:IAO_0000118 xml:lang="en">reader</obo:IAO_0000118>		
+    </owl:Class>
+    <owl:Class rdf:about="&imo;IMO_0000037">
+		<rdfs:label xml:lang="en">transition_agent</rdfs:label>
+		<rdfs:subClassOf rdf:resource="&IMO_0000031"/>
+        <obo:IAO_0000112 xml:lang="en">role</obo:IAO_0000112>			
+        <obo:IAO_0000116 xml:lang="en">A role of transition agent.</obo:IAO_0000116>
+        <obo:IAO_0000118 xml:lang="en">service</obo:IAO_0000118>		
+    </owl:Class>	
+<!-- End of Roles -->
+<!-- Process -->
+	<owl:Class rdf:about="&imo;IMO_0001001">
+        <rdfs:label xml:lang="en">identity state transforming</rdfs:label>
+		<rdfs:subClassOf rdf:resource="&bfo;BFO_000015"/>	
+        <obo:IAO_0000112 xml:lang="en"></obo:IAO_0000112>
+        <obo:IAO_0000115 xml:lang="en"></obo:IAO_0000115>		
+        <obo:IAO_0000116 xml:lang="en">A process in which an identity state becomes transformed.</obo:IAO_0000116>
+        <obo:IAO_0000118 xml:lang="en"></obo:IAO_0000118>		
+    </owl:Class>
+<!-- End of Process -->
+<!-- History (Sequential process) -->
+	<owl:Class rdf:about="&imo;IMO_0001011">
+        <rdfs:label xml:lang="en">identity state history</rdfs:label>	
+		<rdfs:subClassOf rdf:resource="&bfo;BFO_0000182"/>	
+        <obo:IAO_0000112 xml:lang="en"></obo:IAO_0000112>
+        <obo:IAO_0000115 xml:lang="en"></obo:IAO_0000115>		
+        <obo:IAO_0000116 xml:lang="en">A process in which an identity state becomes registered.</obo:IAO_0000116>
+        <obo:IAO_0000118 xml:lang="en">identity history</obo:IAO_0000118>		
+    </owl:Class>
+	<owl:Class rdf:about="&imo;IMO_0001012">
+        <rdfs:label xml:lang="en">context history</rdfs:label>	
+		<rdfs:subClassOf rdf:resource="&imo;IMO_000061"/>
+        <obo:IAO_0000112 xml:lang="en"></obo:IAO_0000112>
+        <obo:IAO_0000115 xml:lang="en"></obo:IAO_0000115>		
+        <obo:IAO_0000116 xml:lang="en">A process in which an identity state becomes registered.</obo:IAO_0000116>
+        <obo:IAO_0000118 xml:lang="en">narrative identity history</obo:IAO_0000118>		
+    </owl:Class>	
+	<owl:Class rdf:about="&imo;IMO_0001013">
+        <rdfs:label xml:lang="en">contextual coidentity history</rdfs:label>	
+		<rdfs:subClassOf rdf:resource="&imo;IMO_000061"/>
+        <obo:IAO_0000112 xml:lang="en"></obo:IAO_0000112>
+        <obo:IAO_0000115 xml:lang="en"></obo:IAO_0000115>		
+        <obo:IAO_0000116 xml:lang="en">A process in which an identity state becomes registered.</obo:IAO_0000116>
+        <obo:IAO_0000118 xml:lang="en">coidentity history</obo:IAO_0000118>		
+    </owl:Class>	
+	<owl:Class rdf:about="&imo;IMO_0001014">
+        <rdfs:label xml:lang="en">contextual identity history</rdfs:label>	
+		<rdfs:subClassOf rdf:resource="&imo;IMO_000061"/>
+        <obo:IAO_0000112 xml:lang="en"></obo:IAO_0000112>
+        <obo:IAO_0000115 xml:lang="en"></obo:IAO_0000115>		
+        <obo:IAO_0000116 xml:lang="en">A process in which an identity state becomes registered.</obo:IAO_0000116>
+        <obo:IAO_0000118 xml:lang="en">identity history</obo:IAO_0000118>		
+    </owl:Class>
+<!-- End of History (Sequential processing) -->
+<!-- Process Profile (Parallel processing) -->
+	<owl:Class rdf:about="&imo;IMO_0001021">
+        <rdfs:label xml:lang="en">identity agent profile</rdfs:label>	
+		<rdfs:subClassOf rdf:resource="&bfo;BFO_0000144"/>	
+        <obo:IAO_0000112 xml:lang="en"></obo:IAO_0000112>
+        <obo:IAO_0000115 xml:lang="en"></obo:IAO_0000115>		
+        <obo:IAO_0000116 xml:lang="en">A process profile in which a particular agent participates.</obo:IAO_0000116>
+        <obo:IAO_0000118 xml:lang="en"></obo:IAO_0000118>		
+    </owl:Class>
+	<owl:Class rdf:about="&imo;IMO_0001022">
+        <rdfs:label xml:lang="en">context process profile</rdfs:label>	
+		<rdfs:subClassOf rdf:resource="&imo;IMO_0000071"/>	
+        <obo:IAO_0000112 xml:lang="en"></obo:IAO_0000112>
+        <obo:IAO_0000115 xml:lang="en"></obo:IAO_0000115>		
+        <obo:IAO_0000116 xml:lang="en">A process profile in which an identity agent is realizing its disposition of context.</obo:IAO_0000116>
+        <obo:IAO_0000118 xml:lang="en"></obo:IAO_0000118>		
+    </owl:Class>
+	<owl:Class rdf:about="&imo;IMO_0001023">
+        <rdfs:label xml:lang="en">composition process profile</rdfs:label>	
+		<rdfs:subClassOf rdf:resource="&imo;IMO_0000071"/>	
+        <obo:IAO_0000112 xml:lang="en"></obo:IAO_0000112>
+        <obo:IAO_0000115 xml:lang="en"></obo:IAO_0000115>		
+        <obo:IAO_0000116 xml:lang="en">A process profile in which an identity agent is realizing a disposition of composition.</obo:IAO_0000116>
+        <obo:IAO_0000118 xml:lang="en"></obo:IAO_0000118>		
+    </owl:Class>
+	<owl:Class rdf:about="&imo;IMO_0001024">
+        <rdfs:label xml:lang="en">registration process profile</rdfs:label>	
+		<rdfs:subClassOf rdf:resource="&imo;IMO_0000071"/>	
+        <obo:IAO_0000112 xml:lang="en"></obo:IAO_0000112>
+        <obo:IAO_0000115 xml:lang="en"></obo:IAO_0000115>		
+        <obo:IAO_0000116 xml:lang="en">A process profile in which an identity agent is realizing a disposition of registraton.</obo:IAO_0000116>
+        <obo:IAO_0000118 xml:lang="en"></obo:IAO_0000118>
+    </owl:Class>		
+	<owl:Class rdf:about="&imo;IMO_0001025">
+        <rdfs:label xml:lang="en">regulation process profile</rdfs:label>	
+		<rdfs:subClassOf rdf:resource="&imo;IMO_0000071"/>	
+        <obo:IAO_0000112 xml:lang="en"></obo:IAO_0000112>
+        <obo:IAO_0000115 xml:lang="en"></obo:IAO_0000115>		
+        <obo:IAO_0000116 xml:lang="en">A process profile in which an identity agent is realizing a disposition of regulation.</obo:IAO_0000116>
+        <obo:IAO_0000118 xml:lang="en"></obo:IAO_0000118>
+    </owl:Class>
+	<owl:Class rdf:about="&imo;IMO_0001026">
+        <rdfs:label xml:lang="en">resolution process profile</rdfs:label>	
+		<rdfs:subClassOf rdf:resource="&imo;IMO_0000071"/>	
+        <obo:IAO_0000112 xml:lang="en"></obo:IAO_0000112>
+        <obo:IAO_0000115 xml:lang="en"></obo:IAO_0000115>		
+        <obo:IAO_0000116 xml:lang="en">A process profile in which an identity agent is realizing a disposition of resolution.</obo:IAO_0000116>
+        <obo:IAO_0000118 xml:lang="en"></obo:IAO_0000118>
+    </owl:Class>
+	<owl:Class rdf:about="&imo;IMO_0001027">
+        <rdfs:label xml:lang="en">transition process profile</rdfs:label>	
+		<rdfs:subClassOf rdf:resource="&imo;IMO_0000071"/>	
+        <obo:IAO_0000112 xml:lang="en"></obo:IAO_0000112>
+        <obo:IAO_0000115 xml:lang="en"></obo:IAO_0000115>		
+        <obo:IAO_0000116 xml:lang="en">A process profile in which an identity agent is realizing a disposition of transition.</obo:IAO_0000116>
+        <obo:IAO_0000118 xml:lang="en"></obo:IAO_0000118>	
+    </owl:Class>
+<!-- End of Process Profile (Parallel processing) -->	
+<!-- SpatioTemporal Region --> 	
+	<owl:Class rdf:about="&imo;IMO_0001031">
+        <rdfs:label xml:lang="en">context region</rdfs:label>	
+		<rdfs:subClassOf rdf:resource="&bfo;BFO_0000015"/>		
+        <obo:IAO_0000118 xml:lang="en"></obo:IAO_0000118>	
+    </owl:Class>
+	<owl:Class rdf:about="&imo;IMO_0001032">
+        <rdfs:label xml:lang="en">coidentity region</rdfs:label>	
+		<rdfs:subClassOf rdf:resource="&bfo;BFO_0000015"/>	
+        <obo:IAO_0000118 xml:lang="en"></obo:IAO_0000118>	
+    </owl:Class>
+	<owl:Class rdf:about="&imo;IMO_0001033">
+        <rdfs:label xml:lang="en">identity region</rdfs:label>	
+		<rdfs:subClassOf rdf:resource="&bfo;BFO_0000015"/>		
+        <obo:IAO_0000118 xml:lang="en"></obo:IAO_0000118>	
+    </owl:Class>
+<!-- End of SpatioTemporal Region -->
+<!-- Process Boundary -->
+	<owl:Class rdf:about="&imo;IMO_0001041">
+        <rdfs:label xml:lang="en">identity state boundary</rdfs:label>	
+		<rdfs:subClassOf rdf:resource="&obo;BFO_0000035"/>	
+        <obo:IAO_0000112 xml:lang="en">process boundary</obo:IAO_0000112>
+        <obo:IAO_0000115 xml:lang="en"></obo:IAO_0000115>		
+        <obo:IAO_0000116 xml:lang="en">A temporal region in which an identity state resides.</obo:IAO_0000116>
+        <obo:IAO_0000118 xml:lang="en"></obo:IAO_0000118>
+    </owl:Class>	
+<!-- End of rocess Boundary -->	
+<!-- Temporal Region -->
+	<owl:Class rdf:about="&imo;IMO_0001051">
+        <rdfs:label xml:lang="en">identity stage temporal region</rdfs:label>	
+		<rdfs:subClassOf rdf:resource="&obo;BFO_0000008"/>	
+        <obo:IAO_0000112 xml:lang="en">temporal region</obo:IAO_0000112>
+        <obo:IAO_0000115 xml:lang="en"></obo:IAO_0000115>		
+        <obo:IAO_0000116 xml:lang="en">A temporal region in which an identity state resides.</obo:IAO_0000116>
+        <obo:IAO_0000118 xml:lang="en"></obo:IAO_0000118>
+    </owl:Class>	
+<!-- End of Temporal Region -->	
+
+	
+	
+	
+	
+    <owl:ObjectProperty rdf:about="&imo;IMO_1000067">
+        <rdfs:label xml:lang="en">contains process</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="&obo;BFO_0000067"/>
+        <rdfs:domain rdf:resource="&imo;IMO_0000051"/>
+        <rdfs:range rdf:resource="&imo;IMO_0000041"/>		
+        <obo:IAO_0000118 xml:lang="en">contains_process</obo:IAO_0000118>		
+    </owl:ObjectProperty>
+    <owl:ObjectProperty rdf:about="&imo;IMO_1000068">
+        <rdfs:label xml:lang="en">contains process</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="&obo;BFO_0000067"/>
+        <rdfs:domain rdf:resource="&imo;IMO_0000052"/>
+        <rdfs:range rdf:resource="&imo;IMO_0000042"/>		
+        <obo:IAO_0000118 xml:lang="en">contains_process</obo:IAO_0000118>		
+    </owl:ObjectProperty>
+    <owl:ObjectProperty rdf:about="&imo;IMO_1000069">
+        <rdfs:label xml:lang="en">contains process</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="&obo;BFO_0000067"/>
+        <rdfs:domain rdf:resource="&imo;IMO_0000053"/>
+        <rdfs:range rdf:resource="&imo;IMO_0000043"/>		
+        <obo:IAO_0000118 xml:lang="en">contains_process</obo:IAO_0000118>		
+    </owl:ObjectProperty>	
+
+
+
+	
+
+	
+    <owl:ObjectProperty rdf:about="&obo;RO_1010001">
+        <rdfs:label>has record</rdfs:label>	
+        <rdfs:subPropertyOf rdf:resource="&obo;BFO_0000053"/>	
+        <owl:inverseOf rdf:resource="&obo;RO_0010002"/>
+        <rdfs:domain rdf:resource="&obo;BFO_0000031"/>
+        <rdfs:range rdf:resource="&obo;BFO_0000004"/>
+        <obo:IAO_0000112>Genetic information generically depend on molecules of DNA.</obo:IAO_0000112>
+        <obo:IAO_0000112>The novel *War and Peace* generically depends on this copy of the novel.</obo:IAO_0000112>
+        <obo:IAO_0000112>The pattern shared by chess boards generically depends on any chess board.</obo:IAO_0000112>
+        <obo:IAO_0000112>The score of a symphony g-depends on a copy of the score.</obo:IAO_0000112>
+        <obo:IAO_0000112>This pdf file generically depends on this server.</obo:IAO_0000112>
+        <obo:IAO_0000115>A generically dependent continuant *b* generically depends on an independent continuant *c* at time *t* means: there inheres in *c* a specifically deendent continuant which concretizes *b* at *t*.</obo:IAO_0000115>
+        <obo:IAO_0000119>[072-ISO]</obo:IAO_0000119>
+        <obo:IAO_0000118 xml:lang="en">has_record</obo:IAO_0000118>		
+    </owl:ObjectProperty>	
+
+    <owl:ObjectProperty rdf:about="&obo;RO_0010001">
+        <owl:inverseOf rdf:resource="&obo;RO_0010002"/>
+        <rdfs:domain rdf:resource="&obo;BFO_0000031"/>
+        <rdfs:range rdf:resource="&obo;BFO_0000004"/>
+        <oboInOwl:hasExactSynonym>g-depends on</oboInOwl:hasExactSynonym>
+        <rdfs:label>generically depends on</rdfs:label>
+    </owl:ObjectProperty>	
+
+	
+    <ObjectProperty rdf:about="&obo;BFO_0000052">
+        <rdfs:label xml:lang="en">inheres in</rdfs:label>
+        <rdfs:seeAlso>[051-001]</rdfs:seeAlso>
+        <rdfs:comment>DOMAIN: specifically dependent continuant, RANGE: independent continuant</rdfs:comment>
+        <obo:IAO_0000118 xml:lang="en">inheres_in</obo:IAO_0000118>
+        <rdfs:domain rdf:resource="&imo;IMO_0000145"/>		
+        <rdfs:range rdf:resource="&imo;IMO_0000030"/>
+        <owl:inverseOf rdf:resource="&obo;BFO_0000053"/>		
+        <rdfs:subPropertyOf rdf:resource="&obo;BFO_0000070"/>
+    </ObjectProperty>	
+    <ObjectProperty rdf:about="&obo;BFO_0000053">
+        <rdfs:label xml:lang="en">is bearer of</rdfs:label>
+        <rdfs:seeAlso>[053-001]</rdfs:seeAlso>
+        <rdfs:seeAlso>DOMAIN: independent continuant, RANGE: specifically dependent continuant</rdfs:seeAlso>
+        <obo:IAO_0000112 xml:lang="en"></obo:IAO_0000112>		
+        <obo:IAO_0000118 xml:lang="en">bearer of</obo:IAO_0000118>
+        <obo:IAO_0000118 xml:lang="en">bearer_of</obo:IAO_0000118>
+        <rdfs:domain rdf:resource="&imo;IMO_0000030"/>
+        <rdfs:range rdf:resource="&imo;IMO_0000145"/>
+        <owl:inverseOf rdf:resource="&obo;BFO_0000052"/>
+        <rdfs:subPropertyOf rdf:resource="&obo;BFO_0000125"/>
+    </ObjectProperty>
+    <owl:Class rdf:about="&imo;IMO_0000027">
+		<rdfs:subClassOf rdf:resource="&bfo;BFO_0000027"/>	
+        <rdfs:label xml:lang="en">inter-identity bearer</rdfs:label>
+        <rdfs:comment>A bearer of inter-identity</rdfs:comment>		
+    </owl:Class>		
+    <owl:Class rdf:about="&imo;IMO_0000028">	
+		<rdfs:subClassOf rdf:resource="&imo;IMO_0000027"/>		
+        <rdfs:label xml:lang="en">formal entity (controlled/ruled by norms)</rdfs:label>
+		<owl:disjointWith rdf:resource="&imo;IMO_0000006"/>
+    </owl:Class>	
+
+	
+    <owl:ObjectProperty rdf:about="&obo;BFO_0000079">
+        <rdfs:label xml:lang="en">function of</rdfs:label>
+        <owl:inverseOf rdf:resource="&obo;BFO_0000085"/>
+        <rdfs:domain rdf:resource="&obo;BFO_0000034"/>
+        <obo:IAO_0000112 xml:lang="en"></obo:IAO_0000112>
+        <obo:IAO_0000115 xml:lang="en">a relation between a function and an independent continuant (the bearer), in which the function specifically depends on the bearer for its existence</obo:IAO_0000115>
+        <obo:IAO_0000116 xml:lang="en">A function inheres in its bearer at all times for which the function exists, however the function need not be realized at all the times that the function exists.</obo:IAO_0000116>
+        <obo:IAO_0000118 xml:lang="en">function_of</obo:IAO_0000118>
+        <obo:IAO_0000118 xml:lang="en">is function of</obo:IAO_0000118>
+        <rdfs:subPropertyOf rdf:resource="&obo;BFO_0000052"/>		
+    </owl:ObjectProperty>
+    <owl:ObjectProperty rdf:about="&obo;BFO_0000085">
+        <rdfs:label xml:lang="en">has function</rdfs:label>
+        <rdfs:domain rdf:resource="&obo;BFO_0000004"/>
+        <rdfs:range rdf:resource="&obo;BFO_0000034"/>
+        <obo:IAO_0000112 xml:lang="en"></obo:IAO_0000112>
+        <obo:IAO_0000115 xml:lang="en">a relation between an independent continuant (the bearer) and a function, in which the function specifically depends on the bearer for its existence</obo:IAO_0000115>
+        <obo:IAO_0000116 xml:lang="en">A bearer can have many functions, and its functions can exist for different periods of time, but none of its functions can exist when the bearer does not exist. A function need not be realized at all the times that the function exists.</obo:IAO_0000116>
+        <obo:IAO_0000118 xml:lang="en">has_function</obo:IAO_0000118>
+        <rdfs:subPropertyOf rdf:resource="&obo;BFO_0000053"/>		
+    </owl:ObjectProperty>
+	
+
+<!--	
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0001000">
+        <owl:inverseOf rdf:resource="http://purl.obolibrary.org/obo/RO_0001001"/>
+        <obo:IAO_0000112 xml:lang="en">this cell derives from this parent cell (cell division)</obo:IAO_0000112>
+        <obo:IAO_0000112 xml:lang="en">this nucleus derives from this parent nucleus (nuclear division)</obo:IAO_0000112>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000125"/>
+        <obo:IAO_0000115 xml:lang="en">a relation between two distinct material entities, the new entity and the old entity, in which the new entity begins to exist when the old entity ceases to exist, and the new entity inherits the significant portion of the matter of the old entity</obo:IAO_0000115>
+        <obo:IAO_0000116 xml:lang="en">This is a very general relation. More specific relations are preferred when applicable, such as &apos;directly develops from&apos;.</obo:IAO_0000116>
+        <obo:IAO_0000118 xml:lang="en">derives_from</obo:IAO_0000118>
+        <rdfs:label xml:lang="en">derives from</rdfs:label>
+    </owl:ObjectProperty>
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0001001">
+        <obo:IAO_0000112 xml:lang="en">this parent cell derives into this cell (cell division)</obo:IAO_0000112>
+        <obo:IAO_0000112 xml:lang="en">this parent nucleus derives into this nucleus (nuclear division)</obo:IAO_0000112>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000125"/>
+        <obo:IAO_0000115 xml:lang="en">a relation between two distinct material entities, the old entity and the new entity, in which the new entity begins to exist when the old entity ceases to exist, and the new entity inherits the significant portion of the matter of the old entity</obo:IAO_0000115>
+        <obo:IAO_0000116 xml:lang="en">This is a very general relation. More specific relations are preferred when applicable, such as &apos;directly develops into&apos;. To avoid making statements about a future that may not come to pass, it is often better to use the backward-looking &apos;derives from&apos; rather than the forward-looking &apos;derives into&apos;.</obo:IAO_0000116>
+        <obo:IAO_0000118 xml:lang="en">derives_into</obo:IAO_0000118>
+        <rdfs:label xml:lang="en">derives into</rdfs:label>
+    </owl:ObjectProperty>	
+	
+-->
+	
+<!-- Processes -->	
+    <owl:Class rdf:about="&imo;IMO_0001015">
+		<rdfs:subClassOf rdf:resource="&bfo;BFO_0000015"/>	
+        <rdfs:label xml:lang="en">identity management process (identity governance)</rdfs:label>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource=""/>		
+    </owl:Class>	
+    <owl:Class rdf:about="&imo;IMO_0001017">
+		<rdfs:subClassOf rdf:resource="&imo;IMO_0001015"/>	
+        <rdfs:label xml:lang="en">identity registration (onboarding, enrollement, ...)</rdfs:label>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource=""/>		
+    </owl:Class>
+    <owl:Class rdf:about="&imo;IMO_0001018">
+		<rdfs:subClassOf rdf:resource="&imo;IMO_0001015"/>	
+        <rdfs:label xml:lang="en">identity operation (identification, authentication, access control, ...)</rdfs:label>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource=""/>		
+    </owl:Class>
+	
+
+    <owl:Class rdf:about="&imo;IMO_0001182">
+		<rdfs:subClassOf rdf:resource="&bfo;BFO_0000182"/>	
+        <rdfs:label xml:lang="en">identity state logging (history)</rdfs:label>
+    </owl:Class>	
+<!-- End of Processes -->
+	
+<!--
+    <owl:Class rdf:about="&imo;IMO_0000011">
+		<rdfs:subClassOf rdf:resource="&imo;IMO_0000001"/>	
+        <rdfs:label xml:lang="en">organism</rdfs:label>		
+    </owl:Class>
+    <owl:Class rdf:about="&imo;IMO_0000012">
+		<rdfs:subClassOf rdf:resource="&bfo;BFO_0000030"/>	
+        <rdfs:label xml:lang="en">artefact</rdfs:label>		
+    </owl:Class>
+-->
+<!-- Inter-identity record (set of identity attributes)-->	
+    <owl:Class rdf:about="&imo;IMO_0000004">
+		<!-- IAO:informaion Content Entity -->	
+		<rdfs:subClassOf rdf:resource="&bfo;IAO_0000030"/>	
+        <rdfs:label xml:lang="en">identity (domain set of identity attributes) record</rdfs:label>		
+    </owl:Class>
+<!-- Infrastructure for inter-identity records based on IAO:Material Information Bearer-->	
+	<owl:Class rdf:about="&imo;IMO_0000002">
+		<!-- IAO:informaion Content Entity -->	
+		<rdfs:subClassOf rdf:resource="&bfo;IAO_0000178"/>	
+        <rdfs:label xml:lang="en">identity registry (record/identity set carrier)</rdfs:label>		
+    </owl:Class>		
+
+    <owl:Class rdf:about="&imo;IMO_0000006">	
+		<rdfs:subClassOf rdf:resource="&imo;IMO_0000003"/>	
+        <rdfs:label xml:lang="en">informal entity</rdfs:label>
+		<owl:disjointWith rdf:resource="&imo;IMO_0000005"/>
+    </owl:Class>
+	
+	<owl:ObjectProperty rdf:about="&imo;IMO_0000140">
+		<!-- IMO:Condition -> Condition Set -> Norm -->	
+        <rdfs:label xml:lang="en">has_norm</rdfs:label>   
+		<rdfs:domain rdf:resource="&imo;IMO_0000005"/>
+		<rdfs:range rdf:resource="&imo;Norm"/>
+	</owl:ObjectProperty>
+</rdf:RDF>	
